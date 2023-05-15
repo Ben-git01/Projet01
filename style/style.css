@@ -1,0 +1,139 @@
+/* Init window size */
+*{
+    height:100vh;
+    width: 100vw;
+    margin:0;
+    padding:0;
+}
+
+
+/* ======================= Détection ratio fenêtre ================================ */
+/* => Image de 986.16px par 1285.2px soit ratio largeur/hauteur de 0.76             */ 
+/* => Si écran au-dessus (largeur>hauteur), on fixe la hauteur et ajuste la largeur */ 
+/* => Sinon l'inverse                                                               */ 
+
+@media screen and (min-aspect-ratio:19/25) 
+ {
+
+    .game-container {
+        height: 100vh;
+        width: calc(100vh * 0.767);
+        object-fit:contain;
+        position:relative;
+        margin: 0 auto;
+        
+    } 
+
+}
+
+@media screen and (max-aspect-ratio:19/25) {
+    body{
+        background-color: yellow;
+    }
+    .game-container {
+     width: 100vw;
+    height: calc(100vw * 1.3);
+    object-fit:contain;
+    position:relative;
+    margin: 0 auto; 
+}
+}
+
+
+.img-background{
+    position: absolute;
+    height:100%;
+    width:100%;
+    object-fit: contain;
+    z-index: 0;
+}
+
+
+.Layer-Box{
+    position:absolute;
+    background-color: rgba(128, 128, 128, 0.243);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.Layer-Box img{
+    /* display:none; */
+    height:100%;
+    width:100%;
+    object-fit: contain;
+    transform: translate(0, 100%);
+    
+   
+}
+
+.Layer-Box:hover img {
+    display: block;
+    transform: translate(0,0%);
+    /* overflow: hidden; */
+    transition: transform 400ms ease-in-out ;
+}
+
+/* Dimensions et positions des box */
+.Box1{
+    height:18.68%;
+    width:24.34%;
+    /*Offset*/
+    left: 0.87%;
+    top :58.33%;
+}
+
+.Box1{
+    height:18.68%;
+    width:24.34%;
+    /*Offset*/
+    left: 0.87%;
+    top :58.33%;
+}
+
+.Box2{
+    height:15.1%;
+    width:19.68%;
+    /*Offset*/
+    left: 75.55%;
+    top :54%;
+}
+
+.Box3{
+    height:12.45%;
+    width:16.23%;
+    /*Offset*/
+    left: 35.39%;
+    top :43.52%;
+}
+
+.Box4{
+    height:3.43%;
+    width:4.47%;
+    /*Offset*/
+    left: 92.93%;
+    top :48.67%;
+}
+
+.Box5{
+    height:5.37%;
+    width:7%;
+    /*Offset*/
+    left: 2.64%;
+    top :48.85%;
+}
+
+.Box6{
+    height:4.28%;
+    width:5.58%;
+    /*Offset*/
+    left: 62.33%;
+    top :41.65%;
+}
+
+.Box7{
+    height:1.56%;
+    width:2.03%;
+    /*Offset*/
+    left: 78.41%;
+    top :24.54%;
+}

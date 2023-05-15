@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+<body>
+
+    <div class="game-container">
+
+
+        <div class="Layer-Box Box1">
+            <img src="assets/img/poulets/Poulet.png" alt="image">
+        </div>
+        <div class="Layer-Box Box2">
+            <img src="assets/img/poulets/Poulet.png" alt="image">
+        </div>
+        <div class="Layer-Box Box3"></div>
+        <div class="Layer-Box Box4"></div>
+        <div class="Layer-Box Box5"></div>
+        <div class="Layer-Box Box6"></div>
+        <div class="Layer-Box Box7">
+            <img src="assets/img/poulets/Poulet.png" alt="image">
+        </div>
+
+        <img class="img-background" id="img-backGame" src="assets/img/background/Background-pipe.png" alt="image">
+
+
+    </div>
+
+
+
+    
+</body>
+
+
+<script>
+
+    function reportsize(){
+
+    let imgBack= document.getElementById('img-backGame');
+
+    let realHeight = window.innerHeight;
+    let realWidth = window.innerWidth;
+
+    // Calcul hauteur grille (branche à 78%) 
+    let hauteurCalculee = (78/100) * realHeight;
+    let aspectRatio = realWidth/realHeight;
+
+    console.log("largeur : " + realWidth + " Hauteur : " + realHeight);
+    console.log("ratio : " +aspectRatio);
+    }
+    
+    window.onresize = reportsize;
+    
+
+</script>
+</html>
