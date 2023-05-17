@@ -57,7 +57,7 @@
 }
 
 .Layer-Box img{
-    /* display:none; */
+    /* visibility: hidden; */
     height:100%;
     width:100%;
     object-fit: contain;
@@ -66,12 +66,47 @@
    
 }
 
-.Layer-Box:hover img {
+ .poulet-Descente {
+    visibility: visible;
+    display: block;
+    transform: translateY(-100%);
+    transition: transform 400ms ease-in-out ;
+} 
+
+.poulet-Montee {
+    visibility: visible;
+    display: block;
+    transform: translateY(100%);
+    transition: transform 400ms ease-in-out ;
+} 
+
+.bt-mont {
+left: 200px;
+}
+
+.btn-desc{
+    left: 300px;
+}
+
+.bp-play{
+
+    height : 5%;
+    width: 5%;
+    background-color: grey;
+    position:absolute;
+    z-index:1;
+    
+}
+
+
+
+
+/* .Layer-Box:hover img {
     display: block;
     transform: translate(0,0%);
-    /* overflow: hidden; */
+    
     transition: transform 400ms ease-in-out ;
-}
+} */
 
 /* Dimensions et positions des box */
 .Box1{
@@ -137,3 +172,4 @@
     left: 78.41%;
     top :24.54%;
 }
+
