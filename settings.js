@@ -29,13 +29,17 @@ let objScore = {
 //Définition des réglages
 let settings = {
     user : '',
-    diffulty : 'facile',
-    delayReap : '0s', 
-    delayVisible : 2,
-    dureeJeu : 60000,
-    nbrePoulets : 7
+    difficulty : 'facile',
+    delayReap : 5000, 
+    delayVisible : 2000,
+    dureeJeu : 20000,
+    nbrePoulets : 7 
+    
     
 }
+
+//Trigger timerflow
+let trigger = true;
 
 /* ====================================================== */
 /*                      FONCTIONS                         */
@@ -54,9 +58,10 @@ const gameInit = (GameSettings) => {
     switch (GameSettings.difficulty) {
 
         case 'facile' :
-            GameSettings.delayReap = 2000;
-            GameSettings.delayVisible = 3000;
+            GameSettings.delayReap = 500;
+            GameSettings.delayVisible = 2000;
             GameSettings.dureeJeu = 60000;
+            console.log("Niveau facile");
        
         break;
 
@@ -66,6 +71,7 @@ const gameInit = (GameSettings) => {
             GameSettings.delayReap = 1000;
             GameSettings.delayVisible = 2000;
             GameSettings.dureeJeu = 60000;
+            console.log("Niveau moyen");
 
         break;
 
@@ -74,6 +80,7 @@ const gameInit = (GameSettings) => {
             GameSettings.delayReap = 1000;
             GameSettings.delayVisible = 1000;
             GameSettings.dureeJeu = 60000;
+            console.log("Niveau difficile");
 
         break;
 
@@ -92,6 +99,9 @@ const gameInit = (GameSettings) => {
     }
 
     console.log(tabPoulets);
+    console.log("Duree partie : " + settings.dureeJeu);
+    console.log("delais reap : " + settings.delayReap); 
+    console.log("delais visible : " + settings.delayVisible);
 
 
     // Utilisateur
@@ -100,60 +110,69 @@ const gameInit = (GameSettings) => {
 }
 
                     /* ~~~~~~~~~~~~~~~~~ */
-                    /*  TIMEFLOW SETUP   */
+                    /*   ANIM  CHICKEN  */
                     /* ~~~~~~~~~~~~~~~~~ */
 
-/* FONCTION QUI GENERE L'ANIMATION DES POULETS */
-const genRandom = (objPoulets, GameSettings, trigger) => {
 
+const genRandom = (objPoulets, GameSettings) => {
+
+       
     
-    if(trigger === true) {
+        // Génération random
         console.log("Nombre poulets : " + settings.nbrePoulets);
-        let numDivRandom = Math.floor(Math.random() * (GameSettings.nbrePoulets));
+        let numDivRandom = Math.floor(Math.random() * (settings.nbrePoulets));
+
+        // **** DETECTER SI CLASSE ACTIVE AVANT DE RANDOM 
+        
         let trollRandom = Math.floor(Math.random()* (5));
 
         console.log("numéro généré random : " + numDivRandom + " Troll : " + trollRandom);
 
+        //Selection des toutes les div poulets
         const Poulets = document.querySelectorAll('.Layer-Box img');
       
+        //Pointe vers le poulet à l'index random
         const PouletsRandom = Poulets[numDivRandom];
 
-        
+        //Debug
+        console.log(PouletsRandom.className);
        
-        // let delayVisibleTimer = setInterval(classVisible(), GameSettings.delayVisible);
 
-        //  function classVisible(){
 
-        // Détermination classe
-        if(trollRandom = 1){
-            objPoulets[numDivRandom].classActive= "troll";
-            PouletsRandom.src= "assets/img/Poulets/preloader_gif2.gif";  
-        }else{
-            objPoulets[numDivRandom].classActive= "normal";
-            PouletsRandom.src= "assets/img/Poulets/Poulet.png";
-        }
+        // =====> Timer 
+        let timer;
 
-        console.log(PouletsRandom.src);
-
-        // }
-
-        /*
-
-        .Layer-Box img{
-            height:100%;
-            width:100%;
-            object-fit: contain;
-            transform: translate(0, 100%);
-           
-        }*/
         
+
+        PouletsRandom.style.visibility = 'visible';
+
+
+
+        PouletsRandom.classList.add("poulet-Montee");
+
+            console.log("timer init : " + PouletsRandom.className);
+          
+        
+            timer = setTimeout(function() {
+                PouletsRandom.classList.remove("poulet-Montee");
+                PouletsRandom.classList.add("poulet-Descente");
+                
+
+
+                console.log("switch state timeout : " + PouletsRandom.className);
+                trigger = true;
+                clearInterval(timer);
+
+            }, settings.delayVisible);
+
+            
+
+            
+        
+        }
 
     
 
-        
-    }
-
-}
 
 
 /* Fonction qui récupère DIV dans DOM */
@@ -165,6 +184,27 @@ const caughtDiv = () => {
 }
 
 
+// function gameLoop(){
+// console.log("main del : " +settings.delayReap);
+// //Boucle du jeu 
+// const GameDuration = setInterval(genRandom(tabPoulets, settings), settings.delayReap);
+
+// setTimeout(function(){
+//     clearInterval(GameDuration);
+// }, settings.dureeJeu);
+
+
+function startLoop() {
+    const intervalId = setInterval(genRandom, settings.delayReap); // Exécute genRandom toutes les secondes
+  
+    // Arrêter la boucle après la durée spécifiée
+    setTimeout(function() {
+      clearInterval(intervalId);
+      console.log("Jeu termine");
+    }, settings.dureeJeu);
+  }
+  
+  // Démarrer la boucle
 
 
 
@@ -176,7 +216,9 @@ const startGame = () => {
 
     gameInit(settings);
 
-    genRandom(tabPoulets, settings, true); 
+    startLoop();
+
+     
     
     
 

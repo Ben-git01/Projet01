@@ -57,11 +57,11 @@
 }
 
 .Layer-Box img{
-    /* visibility: hidden; */
+    visibility: hidden; 
     height:100%;
     width:100%;
     object-fit: contain;
-    transform: translate(0, 100%);
+     /* transform: translate(0, -100%);  */
     
    
 }
@@ -69,14 +69,14 @@
  .poulet-Descente {
     visibility: visible;
     display: block;
-    transform: translateY(-100%);
+    transform: translateY(100%);
     transition: transform 400ms ease-in-out ;
 } 
 
 .poulet-Montee {
     visibility: visible;
     display: block;
-    transform: translateY(100%);
+    transform: translateY(0%);
     transition: transform 400ms ease-in-out ;
 } 
 
@@ -85,7 +85,7 @@ left: 200px;
 }
 
 .btn-desc{
-    left: 300px;
+left: 300px;
 }
 
 .bp-play{
