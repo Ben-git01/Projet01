@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    overflow:hidden;  
+}
+
+body {
+    
+    width: 100vw;
+    background-image: url(assets/img/background/back1.png);
+    /*background-color: #aaffee;*/
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+}
+
+header{
+    height: 10vh;
+    width: 100%;
+    /* background-color: #cd542c; */
+}
+
+.navbar{
+    /* padding : 1em; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #cd542c;
+    
+}
+
+a {
+    color: white;
+}
+
+/* CSS LOGO */
+
+.logo{
+    margin-left: 1rem;
+    height:100%;
+    /* width:30%; */
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-family:'Rye', cursive;
+}
+
+
+.hat {
+    height: 40%;
+}
+
+.hat-cowboy{
+    /* height:100%; */
+    object-fit:contain;
+}
+
+.pistols{
+    height:40%;
+    transform : translateY(38%);
+    
+}
+
+.pistol1 {
+    object-fit: contain;
+    transform : scaleX(-1) rotate(15deg);
+    /* height: 100%; */
+}
+
+.pistol2 {
+    object-fit: contain;
+    /* height: 100%; */
+    transform : rotate(15deg);
+}
+
+.logo-col{
+    height:100%;
+    width:40%;
+    display:flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    /* gap:0.4rem; */
+    
+}
+
+.titre-Logo{
+    width: 100%;
+    text-align: center;
+    color:white;
+}
+
+.titre-Logo h1{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+/* FIN LOGO */
+
+.navbar .nav-links ul {
+    display : flex;
+    font-size: 1.5em;
+    
+}
+.navbar .nav-links ul li{
+    margin: 0 25px;
+   
+}
+
+.navbar .nav-links ul li.active a{
+    color: red;
+    font-weight: 600;
+}
+
+.navbar .menu-hamburger{
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 35px;
+}
+
+.nav-links{
+    font-family:'Rye', cursive;
+
+}
+
+main{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 87vh;
+    width: 100vw;
+
+}
+
+button{
+    width: 12%;
+    height: 10%;
+    font-family:'Rye', cursive;
+    border-radius: 24px;
+    font-size : 2em;
+    background-color: #d9a10d;
+    box-shadow: 12px;
+    transform: translate(-370%, -175%)
+    
+}
+
+footer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+    height: 3vh;
+    width: 100%;
+    background-color: #cd542c;
+    font-family:'montserrat', cursive;
+    font-size: 0.8rem;
+    font-weight: 100;
+    color:white;
+    align-items: center;
+
+   
+}
+
+.text-footer{
+    margin-left:0.5rem;
+}
+
+
+.text-footer2{
+    margin-right:0.5rem;
+}
+
+
+
+
+
+@media screen and (max-width: 900px) {
+    .navbar{
+        padding: 0;
+    }
+    .navbar .logo{
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .navbar .menu-hamburger{
+        display: block;
+    }
+
+    .nav-links{
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.297);
+        backdrop-filter: blur(8px);
+        width: 100%;
+        height : 100vh;
+        display: flex;
+        justify-content: center;
+        margin-left: -100%;
+        transition: all 0.5 ease;
+
+    }
+
+    .nav-links.mobile-menu {
+        margin-left: 0;
+    
+    }
+
+    .nav-links ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links ul li{
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+}
