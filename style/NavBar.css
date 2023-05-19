@@ -1,0 +1,100 @@
+
+/* ============ NAV BAR ============= */
+.navbar{
+    /* padding : 1em; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #cd542c;
+    border-bottom: 7px solid white;
+    
+}
+
+a {
+    color: white;
+}
+
+
+.logo{
+height: 80%;
+margin-left: 2rem;
+}
+
+.navbar .nav-links ul {
+    display : flex;
+    font-size: 1.5em;
+    
+}
+.navbar .nav-links ul li{
+    margin: 0 25px;
+   
+}
+
+.navbar .nav-links ul li.active a{
+    color: red;
+    font-weight: 600;
+}
+
+.navbar .menu-hamburger{
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 35px;
+}
+
+.nav-links{
+    font-family:'Rye', cursive;
+
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .navbar{
+        padding: 0;
+    }
+    .navbar .logo{
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .navbar .menu-hamburger{
+        display: block;
+    }
+
+    .nav-links{
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.297);
+        backdrop-filter: blur(8px);
+        width: 100%;
+        height : 100vh;
+        display: flex;
+        justify-content: center;
+        margin-left: -100%;
+        transition: all 0.5 ease;
+
+    }
+
+    .nav-links.mobile-menu {
+        margin-left: 0;
+    
+    }
+
+    .nav-links ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links ul li{
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+}

@@ -4,75 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style/style.css">
-  
+    <link rel="stylesheet" href="style/Home.css">
+    <link rel="stylesheet" href="style/NavBar.css">
+    
+    <title>Home - The Legend of Chicken</title>
 
 </head>
 <body>
+    <header>
+    <nav class="navbar">
+        
+         <img src="./assets/img/nav-bar/Logo.png" alt="menu-burger" class="logo"> 
 
-    <div class="game-container">
-
-
-        <div class="Layer-Box Box1">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
+        <div class="nav-links">
+            
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Scores</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
-        <div class="Layer-Box Box2">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box3" >
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box4">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box5">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box6">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box7">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-
-        <img class="img-background" id="img-backGame" src="assets/img/background/Background-pipe.png" alt="image">
-
-        <button type="button" id="btn" class="bp-play" onclick="startGame()">Click Here!</button>
-        <button type="button" id="btn-montee" class="bp-play bt-mont" onclick="montee()">montee</button>
-        <button type="button" id="btn-descente" class="bp-play btn-desc" onclick="descente()">descente</button>
+        <img src="assets/img/nav-bar/logo-menu-burger.png" alt="menu" class="menu-hamburger">
+    </nav>
+</header>
+  
+   <main>
+    <button href="#">RUN</button>
+   </main>
 
 
-    </div>
+   <footer>
+        <span class="text-footer-left"> <i>Projet fait par des wilders pour des wilders</i></span>
+        <span class="text-footer-right"> #WCS mai 2023 </span>
+   </footer>
 
-
-
-    
 </body>
 
-
-<script>
-
-    function reportsize(){
-
-    let imgBack= document.getElementById('img-backGame');
-
-    let realHeight = window.innerHeight;
-    let realWidth = window.innerWidth;
-
-    // Calcul hauteur grille (branche à 78%) 
-    let hauteurCalculee = (78/100) * realHeight;
-    let aspectRatio = realWidth/realHeight;
-
-    console.log("largeur : " + realWidth + " Hauteur : " + realHeight);
-    console.log("ratio : " +aspectRatio);
-    }
-    
-    window.onresize = reportsize;
-    
-
-</script>
-<script type="text/javascript" src="settings.js"></script>
+<script src="js/scriptHome.js"></script>
 
 </html>
