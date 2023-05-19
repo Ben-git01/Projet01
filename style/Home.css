@@ -20,29 +20,12 @@
 
 
 body {
-    width: 100vw;
-    height: 100vh;
     background-image: url("../assets/img/background/back1.png");
     background-size: cover;
     background-position: center ;
     background-repeat: no-repeat;
 }
 
-header{
-    height: 10vh;
-    width: 100%;
-    /* background-color: #cd542c; */
-}
-
-
-main{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 87vh;
-    width: 100vw;
-
-}
 
 button{
     width: 12%;
@@ -54,32 +37,6 @@ button{
     transform: translate(-370%, -175%);
     box-shadow: 17px 13px 7px 0px rgba(0,0,0,0.15);
     transition: box-shadow 0.3s ease-in-out;
-}
-
-footer{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 3vh;
-    width: 100%;
-    background-color: #cd542c;
-    /* font-family:'montserrat', cursive; */
-    font-size: 0.8rem;
-    font-weight: 100;
-    color:white;
-    align-items: center;
-
-   
-}
-
-
-.text-footer-left{
-    margin-left:0.5rem;
-}
-
-
-.text-footer-right{
-    margin-right:0.5rem;
 }
 
 

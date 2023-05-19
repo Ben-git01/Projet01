@@ -9,8 +9,8 @@
  {
 
     .game-container {
-        height: 100vh;
-        width: calc(100vh * 0.767);
+        height: 84vh;
+        width: calc(84vh * 0.767);
         object-fit:contain;
         position:relative;
         margin: 0 auto;
@@ -33,7 +33,24 @@
 }
 
 
+.game-container{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border : 5px solid white;
+    border-radius: 2%;
+    box-shadow: 17px 13px 7px 0px rgba(0,0,0,0.15);
+}
+
+body {
+    background-image: url("../assets/img/background/back1.png");
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+}
+
+
 .img-background{
+    
     position: absolute;
     height:100%;
     width:100%;
