@@ -58,8 +58,8 @@ const gameInit = (GameSettings) => {
     switch (GameSettings.difficulty) {
 
         case 'facile' :
-            GameSettings.delayReap = 500;
-            GameSettings.delayVisible = 2000;
+            GameSettings.delayReap = 1000;
+            GameSettings.delayVisible = 3000;
             GameSettings.dureeJeu = 60000;
             console.log("Niveau facile");
        
@@ -116,7 +116,6 @@ const gameInit = (GameSettings) => {
 
 const genRandom = (objPoulets, GameSettings) => {
 
-       
     
         // Génération random
         console.log("Nombre poulets : " + settings.nbrePoulets);
