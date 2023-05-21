@@ -74,5 +74,12 @@ function startGameSets(){
    
    // Vérification initiale au chargement du script
    checkRequire();
+
+
+   /* =========== BOUTON GO ========== */
+
+   btnStart.addEventListener("click", function() {
+    window.location.href = "Game.html"; 
+   });
    
    

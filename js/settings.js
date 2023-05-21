@@ -32,11 +32,15 @@ let settings = {
     difficulty : 'facile',
     delayReap : 5000, 
     delayVisible : 2000,
+    delayGen : 500,
     dureeJeu : 20000,
     nbrePoulets : 7 
     
     
 }
+
+let TabAnimPouletEnCours = [];
+let timerPoulets = [];
 
 //Trigger timerflow
 let trigger = true;
@@ -114,18 +118,23 @@ const gameInit = (GameSettings) => {
                     /* ~~~~~~~~~~~~~~~~~ */
 
 
-const genRandom = (objPoulets, GameSettings) => {
+const genRandom = () => {
 
     
         // Génération random
-        console.log("Nombre poulets : " + settings.nbrePoulets);
+        //console.log("Nombre poulets : " + settings.nbrePoulets);
         let numDivRandom = Math.floor(Math.random() * (settings.nbrePoulets));
 
+        if(TabAnimPouletEnCours[numDivRandom] == true){
+            console.log("Poulet" + numDivRandom +" déjà actif");
+            return;
+        } else{
         // **** DETECTER SI CLASSE ACTIVE AVANT DE RANDOM 
         
+        console.log("Poulet qui entre en anim : " + numDivRandom);
         let trollRandom = Math.floor(Math.random()* (5));
 
-        console.log("numéro généré random : " + numDivRandom + " Troll : " + trollRandom);
+        //console.log("numéro généré random : " + numDivRandom + " Troll : " + trollRandom);
 
         //Selection des toutes les div poulets
         const Poulets = document.querySelectorAll('.Layer-Box img');
@@ -134,43 +143,57 @@ const genRandom = (objPoulets, GameSettings) => {
         const PouletsRandom = Poulets[numDivRandom];
 
         //Debug
-        console.log(PouletsRandom.className);
+        //console.log(PouletsRandom.className);
        
 
 
         // =====> Timer 
-        let timer;
-
         
 
+        /* DEMARRAGE ANIMATION PAR MONTEE DU POULET */
+        TabAnimPouletEnCours[numDivRandom] = true;
         PouletsRandom.style.visibility = 'visible';
-
-
-
         PouletsRandom.classList.add("poulet-Montee");
-
-            console.log("timer init : " + PouletsRandom.className);
+            // Debug
+            //console.log("timer init : " + PouletsRandom.className);
           
         
-            timer = setTimeout(function() {
+            timerPoulets[numDivRandom] = setTimeout(function() {
                 PouletsRandom.classList.remove("poulet-Montee");
                 PouletsRandom.classList.add("poulet-Descente");
-                
+                TabAnimPouletEnCours[numDivRandom] = false;
+                clearInterval(timerPoulets[numDivRandom]); // Utilisation de l'identifiant de temporisation spécifique pour effacer le timer
+            
 
 
-                console.log("switch state timeout : " + PouletsRandom.className);
-                trigger = true;
-                clearInterval(timer);
+                //console.log("switch state timeout : " + PouletsRandom.className);
+                // clearInterval(timerInterval);
 
             }, settings.delayVisible);
 
             
+            PouletsRandom.addEventListener("click", function (event) {
+                
+                event.stopPropagation(); // Arrete propagation évenement clic
+                objScore.scoreActive++;
+                console.log(objScore.scoreActive);
+                clearTimeout(timerPoulets[numDivRandom]);
+                PouletsRandom.classList.remove("poulet-Montee");
+                PouletsRandom.classList.add("poulet-Descente");
+                TabAnimPouletEnCours[numDivRandom] = false;
+                // PouletsRandom.removeEventListener("click");
+               
+            //trigger = false;
 
+            });
+
+        }
             
         
         }
 
     
+
 
 
 
@@ -194,11 +217,15 @@ const caughtDiv = () => {
 
 
 function startLoop() {
-    const intervalId = setInterval(genRandom, settings.delayReap); // Exécute genRandom toutes les secondes
+    // let timerVisible = [];
+    objScore.scoreActive = 0;
+     TabAnimPouletEnCours = [false, false, false, false, false, false, false];
+
+    const timerInterval = setInterval(genRandom, settings.delayGen); // Exécute genRandom toutes les secondes
   
     // Arrêter la boucle après la durée spécifiée
     setTimeout(function() {
-      clearInterval(intervalId);
+      clearInterval(timerInterval);
       console.log("Jeu termine");
     }, settings.dureeJeu);
   }
@@ -237,51 +264,9 @@ const startGame = () => {
 }
 
 
-/* ====================================================== */
-/*                      GAMEPLAY                          */
-/* ====================================================== */
-
-                /* LANCEMENT DU JEU */
-
-//  ===> bouton play
-// let buttonPlay = document.getElementById("btn-play");
-// buttonPlay.addEventListener("click", gameInit(settings));
-
-
-//  ===> Poulets box
-const layerBoxes = document.querySelectorAll(".Layer-Box img");
-
-// Détection de l'index de la div poulet cliquée
-layerBoxes.forEach(function (box) {
-    box.addEventListener("click", function () {
-
-        let IndexPouletClic = Array.from(document.querySelectorAll(".Layer-Box")).indexOf(this.parentElement);
-        
-        console.log(this + "id : " + IndexPouletClic);
-
-        //Appel de la fonction qui gère les animations
-        gestionEvent(IndexPouletClic);
-
-    });
-});
 
 
 
-
-const gestionEvent = (pouletTouch) => {
-
-        Anim(this); 
-       
-            
-}
-
-
-const Anim = (indexPoulet) => {
-
-
-
-
-}
 
 
 
