@@ -6,10 +6,27 @@ window.addEventListener("load", function() {
 
     let divUser = document.getElementById("User");
     divUser.innerHTML = settings.user;
-    
+
+
+    CompteArebourds();
+
 
   });
 
+
+  function CompteArebourds(){
+
+
+    timerRebourd = setTimeout(function() {
+
+      clearInterval();
+      startGame();
+
+    }, 3000);
+
+    
+
+  };
 
 
 /* ====================================================== */
