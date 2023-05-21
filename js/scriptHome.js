@@ -21,65 +21,63 @@ function startGameSets(){
    
    }
    
+/* ============== BOUTON RUN ================ */
+const btnStart = document.getElementById("btnStart");
 
-   /* ============== BOUTON RUN ================ */
-   const btnStart = document.getElementById("btnStart");
-   
-   /* VERIFICATION DONNEES ENTREES UTILISATEUR */
-   const username = document.getElementById("username");
-   username.addEventListener("input", checkRequire);
-   
-   /* VERIFICATION NIVEAU DIFFICULTE */
-   let nivDiff = document.querySelectorAll('input[type="radio"]');
-   nivDiff.forEach(function(rb) {
-     rb.addEventListener("change", function() {
-       nivDiff.forEach(function(desactivAutreBp) {
-         if (desactivAutreBp !== rb) {
-           desactivAutreBp.checked = false;
-         }
-       });
-       checkRequire();
-     });
-   });
-   
+/* VERIFICATION DONNEES ENTREES UTILISATEUR */
+const username = document.getElementById("username");
+username.addEventListener("input", checkRequire);
 
-   /* ============== POPUP SETTINGS ================= */
-   function checkRequire() {
-     let verifUsername = username.value.trim() !== "";
-     console.log(verifUsername);
-   
-     let niveauSelected = false;
-     nivDiff.forEach(function(rb) {
-       if (rb.checked) {
-         niveauSelected = true;
-       }
-     });
-   
-     if (verifUsername && niveauSelected) {
-       btnStart.style.display = "block";
-       btnStart.style.background = "green";
-       btnStart.disabled = false;
-       btnStart.style.color = "white";
-       btnStart.style.fontSize = "1.2rem";
-       btnStart.innerHTML="Good luck !";
-     } else {
-       btnStart.style.display = "none";
-   
-     }
-   }
-   
-   /* Idee : Changer le texte du bouton go en fonction du niveau sélectionné 
-   easy : poule mouillée
-   medium : ... */
-   
-   // Vérification initiale au chargement du script
-   checkRequire();
+/* VERIFICATION NIVEAU DIFFICULTE */
+let nivDiff = document.querySelectorAll('input[type="radio"]');
+nivDiff.forEach(function(rb) {
+  rb.addEventListener("change", function() {
+    nivDiff.forEach(function(desactivAutreBp) {
+      if (desactivAutreBp !== rb) {
+        desactivAutreBp.checked = false;
+      }
+    });
+    checkRequire();
+  });
+});
 
+/* ============== POPUP SETTINGS ================= */
+function checkRequire() {
+  let verifUsername = username.value.trim() !== "";
+  console.log(verifUsername);
 
-   /* =========== BOUTON GO ========== */
+  let niveauSelected = false;
+  nivDiff.forEach(function(rb) {
+    if (rb.checked) {
+      niveauSelected = true;
+    }
+  });
 
-   btnStart.addEventListener("click", function() {
-    window.location.href = "Game.html"; 
-   });
-   
+  if (verifUsername && niveauSelected) {
+    btnStart.style.display = "block";
+    btnStart.style.background = "green";
+    btnStart.disabled = false;
+    btnStart.style.color = "white";
+    btnStart.style.fontSize = "1.2rem";
+    btnStart.innerHTML = "Good luck!";
+  } else {
+    btnStart.style.display = "none";
+  }
+}
+
+/* Idee : Changer le texte du bouton go en fonction du niveau sélectionné 
+easy : poule mouillée
+medium : ... */
+
+// Vérification initiale au chargement du script
+checkRequire();
+
+/* =========== BOUTON GO ========== */
+btnStart.addEventListener("click", function() {
+  settings.user = username.value;
+  settings.difficulty = document.querySelector('input[name^="sel-"]:checked').value;
+  
+  console.log("User : " + settings.user + " Difficulté : " + settings.difficulty);
+  window.location.href = "Game.html";
+});
    

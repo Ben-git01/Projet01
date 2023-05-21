@@ -3,6 +3,11 @@ window.addEventListener("load", function() {
     setTimeout(function() {
       gameContainer.style.opacity = "1";
     }, 0);
+
+    let divUser = document.getElementById("User");
+    divUser.innerHTML = settings.user;
+    
+
   });
 
 

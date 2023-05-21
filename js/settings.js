@@ -1,46 +1,4 @@
 
-/* DECLARATION DES VARIABLES ET OBJETS */
-
-//Génération de la table poulet & transfert settings
-let tabPoulets = [];
-
-let objPoulet = {
-  classActive: '',
-  touche: false,
-  delayReap: '0s',
-  delayVisible: '2s',
-  nbreClicsReussis: 0,
-  nbreClicsRate: 0
-};
-
-//Définition objet score
-let objScore = {
-  scoreActive: 0,
-  indexClicsReussis: 0,
-  indexClicsRates: 0,
-  ratioReussite: 0,
-  mapPouletTouche: []
-};
-
-//Définition des réglages
-let settings = {
-  user: '',
-  difficulty: 'facile',
-  delayReap: 5000,
-  delayVisible: 2000,
-  delayGen: 500,
-  dureeJeu: 20000,
-  nbrePoulets: 7
-};
-
-let TabAnimPouletEnCours = [];
-let timerPoulets = [];
-let tabEventListenners = [];
-let eventListeners = [];
-
-// Trigger timerflow
-let trigger = true;
-
 /* ====================================================== */
 /*                      FONCTIONS                         */
 /* ====================================================== */
@@ -54,24 +12,30 @@ const gameInit = (GameSettings) => {
 
   // Difficultés du jeu
   switch (GameSettings.difficulty) {
-    case 'facile':
+    case 'easy':
       GameSettings.delayReap = 1000;
       GameSettings.delayVisible = 3000;
       GameSettings.dureeJeu = 60000;
       console.log("Niveau facile");
       break;
-    case 'moyen':
+    case 'medium':
       GameSettings.delayReap = 1000;
       GameSettings.delayVisible = 2000;
       GameSettings.dureeJeu = 60000;
       console.log("Niveau moyen");
       break;
-    case 'difficile':
+    case 'hard':
       GameSettings.delayReap = 1000;
       GameSettings.delayVisible = 1000;
       GameSettings.dureeJeu = 60000;
       console.log("Niveau difficile");
       break;
+    case 'impossible':
+     GameSettings.delayReap = 1000;
+        GameSettings.delayVisible = 1000;
+        GameSettings.dureeJeu = 60000;
+        console.log("Niveau difficile");
+        break;
     default:
       break;
   }
@@ -105,6 +69,7 @@ function PouletTouche(numDivRandom) {
     TabAnimPouletEnCours[numDivRandom] = false;
     tabEventListenners[numDivRandom] = false;
     objScore.scoreActive++;
+    majAffScore();
     console.log("score : " + objScore.scoreActive);
     PouletsRandom.removeEventListener("click", eventListeners[numDivRandom]);
 }
@@ -145,11 +110,19 @@ const genRandom = () => {
     }
   };
 
+function majAffScore(){
+    let divScore = document.getElementById('Score');
+    divScore.innerHTML = objScore.scoreActive;
+    
+     // Ajouter la classe zoom-effect
+     divScore.classList.add('zoom-effect');
 
-/* Fonction qui récupère DIV dans DOM */
-const caughtDiv = () => {
-  // ...
-};
+    // Supprimer la classe zoom-effect après un court délai
+    setTimeout(function() {
+    divScore.classList.remove('zoom-effect');
+    }, 1000); // Durée de l'animation en millisecondes
+}
+  
 
 function startLoop() {
   objScore.scoreActive = 0;
@@ -163,9 +136,13 @@ function startLoop() {
   }, settings.dureeJeu);
 }
 
+
+
 //Fonction start
 const startGame = () => {
+
   gameInit(settings);
+  
   startLoop();
 };
 

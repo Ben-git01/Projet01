@@ -120,7 +120,7 @@ left: 300px;
     width: 5%;
     background-color: grey;
     position:absolute;
-    z-index:1;
+    z-index:100;
     
 }
 
@@ -191,8 +191,47 @@ left: 300px;
 }
 
 /* BOUTONS DE COMMANDE */
+.PaletteGame{
+    position: absolute;
+    /* background-color: white; */
+    width:100%;
+    height:10%;
+    z-index:2;
+    
+    
+}
 
-.ExitGame{
+.infos{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color:white;
+    height:100%;
+    gap:4rem;
+    margin:2rem;
+    font-size: 3rem; 
+    
+
+
+}
+
+.score{
+    font-size: 4rem; 
+   
+}
+
+@keyframes zoomAnimation {
+
+    50% { font-size: 6rem;
+        transform: font-size 300ms; }
+
+  }
+  
+  .zoom-effect {
+    animation: zoomAnimation 500ms;
+  }
+
+/* .ExitGame{
     margin-top:1rem;
     margin-right:1rem;
 
@@ -208,12 +247,14 @@ left: 300px;
     display:flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
-.ExitGame .ExitGame {
+/* .ExitGame .ExitGame {
   width:100%;
   height:100%;
   text-align: center;
   vertical-align: middle;
-}
+} */
+
+
 
