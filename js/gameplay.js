@@ -19,23 +19,23 @@ window.addEventListener("load", function() {
 
 
 //  ===> Poulets box
-const layerBoxes = document.querySelectorAll(".Layer-Box img");
+// const layerBoxes = document.querySelectorAll(".Layer-Box img");
 
 // Détection de l'index de la div poulet cliquée
-layerBoxes.forEach(function (box) {
-    box.addEventListener("click", function () {
+// layerBoxes.forEach(function (box) {
+//     box.addEventListener("click", function () {
 
-        let IndexPouletClic = Array.from(document.querySelectorAll(".Layer-Box")).indexOf(this.parentElement);
+//         let IndexPouletClic = Array.from(document.querySelectorAll(".Layer-Box")).indexOf(this.parentElement);
         
-        console.log(this + "id : " + IndexPouletClic);
+//         console.log(this + "id : " + IndexPouletClic);
 
-        //  this.src = "assets/img/Poulets/Poulet.gif";
+//         //  this.src = "assets/img/Poulets/Poulet.gif";
 
-        //Appel de la fonction qui gère les animations
-        gestionEvent(IndexPouletClic);
+//         //Appel de la fonction qui gère les animations
+//         gestionEvent(IndexPouletClic);
 
-    });
-});
+//     });
+// });
 
 
 
