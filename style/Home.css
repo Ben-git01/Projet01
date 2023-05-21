@@ -7,8 +7,36 @@
     font-family:'Rye', cursive;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* MOBILE */
+@media screen and (max-width: 900px) {
+    .button-run{
+        font-size : 1rem;
+        width: 20%;
+        height: 10%;
+        animation: EntreeEcranMobile 2s forwards, effetShadowMobile 2s infinite;
+        /* transform: translate(-200%, -175%); */
+    }
+}
 
 
+@media screen and (min-width: 900px) {
+    .button-run{
+        font-size : 2rem;
+        width: 12%;
+        height: 10%;
+        animation: EntreeEcran 2s forwards, effetShadow 2s infinite;
+        
+    
+    }
+}
+        
 /* GENERAL */
 
 /* ================= */ 
@@ -27,17 +55,65 @@ body {
 }
 
 
-button{
-    width: 12%;
-    height: 10%;
+.button-run{
     border-radius: 24px;
-    font-size : 2em;
     background-color: #d9a10d;
-    /* box-shadow: 12px; */
-    transform: translate(-370%, -175%);
-    box-shadow: 17px 13px 7px 0px rgba(0,0,0,0.15);
-    transition: box-shadow 0.3s ease-in-out;
 }
+
+
+.btn-game{
+height:3vh;
+width:70%;
+border-radius:1rem;
+border: none;
+}
+
+.btn-game:active{
+    background-color: #d9a10d;
+}
+
+.btn-game:hover{
+    border: 2px solid black;
+}
+
+
+/* ANIMATIONS MOBILE */
+/*================== */
+
+@keyframes EntreeEcranMobile{
+  
+    100% {
+        transform: translateY(-50%) rotateZ(360deg);
+    }
+}
+
+@keyframes effetShadowMobile {
+    50% {
+      box-shadow: 0px 0px 20px 16px #e6a936;
+      font-size: 1.5rem;
+    }
+  }
+
+
+
+  /* ANIMATIONS "NORMALES" */
+  /* ===================== */
+
+@keyframes EntreeEcran{
+
+    100% {
+        transform: translateY(-50%) rotateZ(360deg);
+    }
+}
+
+@keyframes effetShadow {
+    50% {
+      box-shadow: 0px 0px 20px 16px #e6a936;
+      font-size: 3rem;
+    }
+  }
+
+
 
 
 

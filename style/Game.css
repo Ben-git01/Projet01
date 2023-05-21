@@ -9,8 +9,9 @@
  {
 
     .game-container {
-        height: 84vh;
-        width: calc(84vh * 0.767);
+
+        height: 90vh;
+        width: calc(90vh * 0.767);
         object-fit:contain;
         position:relative;
         margin: 0 auto;
@@ -22,6 +23,9 @@
 @media screen and (max-aspect-ratio:19/25) {
     body{
         background-color: yellow;
+     
+      
+      
     }
     .game-container {
      width: 100vw;
@@ -34,19 +38,29 @@
 
 
 .game-container{
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+   
     border : 5px solid white;
     border-radius: 2%;
     box-shadow: 17px 13px 7px 0px rgba(0,0,0,0.15);
+    /* Centrage */
+    top: 50%;
+    transform: translateY(-50%);
+    
 }
-
-body {
+body::before{
+    content:"";
     background-image: url("../assets/img/background/back1.png");
     background-size: cover;
     background-position: center ;
     background-repeat: no-repeat;
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    opacity:0.75;
 }
+
 
 
 .img-background{
@@ -155,7 +169,7 @@ left: 300px;
     width:7%;
     /*Offset*/
     left: 2.64%;
-    top :48.85%;
+    top :46.85%;
 }
 
 .Box6{
@@ -172,5 +186,19 @@ left: 300px;
     /*Offset*/
     left: 78.41%;
     top :24.54%;
+}
+
+/* BOUTONS DE COMMANDE */
+
+.ExitGame{
+    margin-top:1rem;
+    margin-right:1rem;
+    padding:0.5rem;
+    background-color: white;
+    position:absolute;
+    z-index: 30;
+    right:0;
+    border-radius: 20%;
+    cursor: pointer; 
 }
 

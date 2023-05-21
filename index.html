@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/Home.css">
     <link rel="stylesheet" href="style/NavBar.css">
     <link rel="stylesheet" href="style/Structure.css">
+    <link rel="stylesheet" href="style/Popup-settings.css">
     
     <title>Home - The Legend of Chicken</title>
 
@@ -16,8 +17,9 @@
 <body>
     <header>
     <nav class="navbar">
-        
-         <img src="./assets/img/nav-bar/Logo.png" alt="menu-burger" class="logo"> 
+
+        <img src="./assets/img/nav-bar/Logo.png" alt="menu-burger" class="logo"> 
+         
 
         <div class="nav-links">
             
@@ -33,7 +35,56 @@
 </header>
   
    <main>
-    <button href="#">RUN</button>
+
+    <div id="popup-sets" class="popup-settings">
+
+        <div class="titrePopup">
+            <h1>Settings</h1>
+        </div>
+    
+        <div class="Sets">
+            <div class="Sets-user">
+                <label for="username"> Username : </label>
+                <input id="username" type="text" name="username"> 
+            </div>
+            <div class="Sets-difficulty">
+                
+        
+    
+                    <div class="radio-btn">
+                        <input type="radio" id="sel-easy" name="sel-easy" value="easy">
+                        <label for="sel-easy">Easy</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="sel-medium" name="sel-medium" value="medium">
+                        <label for="sel-medium">Medium</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="sel-hard" name="sel-hard" value="hard">
+                        <label for="sel-hard">Hard</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="sel-impossible" name="sel-impossible" value="impossible">
+                        <label for="sel-impossible">Impossible</label>
+                    </div>
+                
+            </div>
+
+            <button class="btn-game" id="btnStart" onclick="startGame()"> <span id="text-btnGame"> </span> </button>
+
+        </div>
+    
+    
+    
+    </div>
+    
+
+
+
+
+    <button id="buttonRun" class="button-run" onclick="startGameSets()" href="#">RUN</button>
+
+
    </main>
 
 
@@ -45,5 +96,6 @@
 </body>
 
 <script src="js/scriptHome.js"></script>
+<script src="js/gameplay.js"></script>
 
 </html>
