@@ -1,20 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
-    overflow:hidden;  
-    font-family:'Rye', cursive;
+    /*overflow: hidden;*/
+    font-family: 'Rye', cursive;
 }
 
 @media screen and (max-width: 900px) {
 
-    footer{
+    footer {
         font-size: 0.5rem;
     }
 
     h1{
-        font-size: 1rem
+        font-size: 1.4rem
     }
 
     label, input{
@@ -22,24 +22,36 @@
     }
 
     .contact{
-        width:80%;
+        width:75%;
+    }
+    .buttonClassContact{
+        width:40vw;
+        height: 5vh;
     }
 }
 
 @media screen and (min-width: 900px) {
 
-    footer{
+    footer {
         font-size: 1rem;
-}
 
-.contact{
+<<<<<<< HEAD
+/* .contact{
     width:40%;
 }
+.buttonClassContact{
+    width:15vw;
+    height: 5vh;
+} */
+
 }
+=======
+  }
+>>>>>>> 7c09955297ddfa26ab7ac3152e5b338de674ced1
 
 /* GENERAL */
 
-/* ================= */ 
+/* ================= */
 /* BODY :   100VH
 /* HEADER : 10vh  
 /* MAIN :   86vh
@@ -52,14 +64,14 @@ body {
     height: 100vh;
 }
 
-header{
+header {
     height: 10vh;
     width: 100%;
     /* background-color: #cd542c; */
 }
 
 
-main{
+main {
     height: 88vh;
     width: 100vw;
 }
@@ -67,27 +79,23 @@ main{
 
 
 
-footer{
-    display:flex;
+footer {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 2vh;
     width: 100%;
     font-weight: 100;
-    color:white;
+    color: white;
     align-items: center;
 }
 
 
-.text-footer-left{
-    margin-left:0.5rem;
+.text-footer-left {
+    margin-left: 0.5rem;
 }
 
 
-.text-footer-right{
-    margin-right:0.5rem;
+.text-footer-right {
+    margin-right: 0.5rem;
 }
-
-
-
-
