@@ -7,7 +7,35 @@
     font-family:'Rye', cursive;
 }
 
+@media screen and (max-width: 900px) {
 
+    footer{
+        font-size: 0.5rem;
+    }
+
+    h1{
+        font-size: 1rem
+    }
+
+    label, input{
+        font-size: 0.8rem;
+    }
+
+    .contact{
+        width:80%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    footer{
+        font-size: 1rem;
+}
+
+.contact{
+    width:40%;
+}
+}
 
 /* GENERAL */
 
@@ -32,24 +60,19 @@ header{
 
 
 main{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    height: 87vh;
+    height: 88vh;
     width: 100vw;
-
 }
+
+
 
 
 footer{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 3vh;
+    height: 2vh;
     width: 100%;
-    background-color: #cd542c;
-    /* font-family:'montserrat', cursive; */
-    font-size: 0.8rem;
     font-weight: 100;
     color:white;
     align-items: center;

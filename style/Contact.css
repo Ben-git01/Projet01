@@ -1,0 +1,70 @@
+* {
+    font-family: 'Rye';
+}
+
+
+body{
+    background-image: url("../assets/img/background/back1.png");
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+    }
+
+ main {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+} 
+
+
+
+form {
+    padding: 15%;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+input, textarea {
+
+    justify-content: center;
+    border: 3%;
+    width: 98%;
+    background-color:#e7dede;
+    border-radius: 5px;
+}
+
+.buttonClass{
+display:flex;
+justify-content: center;
+align-items: center;
+margin-top:2rem;
+
+}
+
+
+button{
+    
+    color: #e7dede;
+    background-color: rgb(105, 170, 40);
+    border-radius: 7px;
+    border-color: #e7dede 30%;
+
+
+}
+
+
+.contact {
+
+    
+
+    /* width: 30rem; */
+    border-radius: 10px;
+    /* margin-top: 30rem; */
+    background-color: rgb(211, 212, 206);
+    border: 5px solid #f9faf7;
+
+}
