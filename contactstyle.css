@@ -1,18 +1,43 @@
-form {
-    margin-left: auto;
-    margin-right: auto;
-    width: 10em;
+* {
+    font-family: 'Rye';
 }
-#img-backGame {
-    opacity: calc(50%);
-}
+
+
 main {
-    margin: 0 auto;
-    height: 100%;
-    width: 100%;
-    display: flex;
+    display: flex; 
+    justify-content: center;
     background-image: url("assets/img/background/Background-pipe.png");
-    background-size:contain;
     background-repeat:no-repeat;
     background-position: center;
+}
+form {
+    padding: 15%;
+    height: 90vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input, textarea {
+
+    justify-content: center;
+    border: 3%;
+    width: 100%;
+    background-color:#e7dede;
+    border-radius: 5px;
+}
+button{
+color: #e7dede;
+background-color: rgb(105, 170, 40);
+border-radius: 7px;
+margin-left: 30%;
+border-color: #e7dede 30%;
+padding: 5px 45px;
+}
+.contact {
+    width: 30rem;
+    border-radius: 10px;
+    margin-top: 30rem;
+    background-color: rgb(211, 212, 206);
+    border: 5px solid #f9faf7;
+
 }
