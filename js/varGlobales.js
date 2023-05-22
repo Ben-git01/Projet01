@@ -40,3 +40,6 @@ let eventListeners = [];
 
 // Trigger timerflow
 let trigger = true;
+
+
+// export {settings};

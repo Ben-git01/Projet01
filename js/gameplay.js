@@ -8,8 +8,7 @@ window.addEventListener("load", function() {
       gameContainer.style.opacity = "1";
     }, 0);
 
-    let divUser = document.getElementById("User");
-    divUser.innerHTML = settings.user;
+   
 
     CompteArebourds();
 
@@ -43,7 +42,7 @@ window.addEventListener("load", function() {
 const startGame = () => {
 
   //On initialise les réglages (difficulté, nom user...)
-  gameInit(settings);
+  gameInit();
 
   //On rentre dans la loop de jeu  
   startLoop();
@@ -57,11 +56,7 @@ const startGame = () => {
 
 function startLoop() {
 
-  //Init du score à 0
-  objScore.scoreActive = 0;
 
-  //Init pas d'animation sur poulets
-  TabAnimPouletEnCours = [false, false, false, false, false, false, false];
 
   //Définition d'un timer d'interval
   //Il va executer la fonction genRandom tous les delayGen (500ms par exemple)
@@ -72,6 +67,11 @@ function startLoop() {
   setTimeout(function() {
     clearInterval(timerInterval);
     console.log("Jeu terminé");
+
+    //Affichage score, bp page score, Rejouer
+    AffichageFinPartie();
+
+
   }, settings.dureeJeu);
 }
 

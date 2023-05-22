@@ -1,4 +1,6 @@
 
+
+
 function startGameSets(){
 
     const bpRun = document.getElementById('buttonRun');
@@ -39,6 +41,7 @@ nivDiff.forEach(function(rb) {
 function checkRequire() {
   let verifUsername = username.value.trim() !== "";
   console.log(verifUsername);
+  
 
   let niveauSelected = false;
   nivDiff.forEach(function(rb) {
@@ -47,13 +50,27 @@ function checkRequire() {
     }
   });
 
-  if (verifUsername && niveauSelected) {
-    btnStart.style.display = "block";
-    btnStart.style.background = "green";
+  if (verifUsername && niveauSelected) { 
+    let difficulte = returnNiveauSelected();
     btnStart.disabled = false;
-    btnStart.style.color = "white";
-    btnStart.style.fontSize = "1.2rem";
-    btnStart.innerHTML = "Good luck!";
+    btnStart.style.visibility= "visible";
+    btnStart.style.display= "block";
+    
+    switch (difficulte) {
+
+      case "easy":  btnStart.innerHTML = "Poule mouillée 😏";
+      break;
+
+      case "medium":  btnStart.innerHTML = "Allons-y gaiement 🐔";
+      break;
+
+       case "hard":  btnStart.innerHTML = "Tu prends la confiance 🤠";
+      break;
+
+      case "impossible":  btnStart.innerHTML = "RIP 😱😱😱";
+      break;
+    }
+   
   } else {
     btnStart.style.display = "none";
   }
@@ -68,10 +85,18 @@ checkRequire();
 
 /* =========== BOUTON GO ========== */
 btnStart.addEventListener("click", function() {
+ 
   settings.user = username.value;
-  settings.difficulty = document.querySelector('input[name^="sel-"]:checked').value;
   
   console.log("User : " + settings.user + " Difficulté : " + settings.difficulty);
-  window.location.href = "Game.html";
+  let navUrl = "Game.html?user=" + username.value;
+  window.location.href = navUrl;
 });
+
+
+function returnNiveauSelected() {
+  settings.difficulty = document.querySelector('input[name^="sel-"]:checked').value;
+  console.log(settings.difficulty);
+  return settings.difficulty;
+}
    
