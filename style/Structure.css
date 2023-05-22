@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    overflow:hidden;  
+    font-family:'Rye', cursive;
+}
+
+@media screen and (max-width: 900px) {
+
+    footer{
+        font-size: 0.5rem;
+    }
+
+    h1{
+        font-size: 1rem
+    }
+
+    label, input{
+        font-size: 0.8rem;
+    }
+
+    .contact{
+        width:80%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+
+    footer{
+        font-size: 1rem;
+}
+
+.contact{
+    width:40%;
+}
+}
+
+/* GENERAL */
+
+/* ================= */ 
+/* BODY :   100VH
+/* HEADER : 10vh  
+/* MAIN :   86vh
+/* FOOTER : 4vh
+/*=================== */
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+header{
+    height: 10vh;
+    width: 100%;
+    /* background-color: #cd542c; */
+}
+
+
+main{
+    height: 88vh;
+    width: 100vw;
+}
+
+
+
+
+footer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 2vh;
+    width: 100%;
+    font-weight: 100;
+    color:white;
+    align-items: center;
+}
+
+
+.text-footer-left{
+    margin-left:0.5rem;
+}
+
+
+.text-footer-right{
+    margin-right:0.5rem;
+}
+
+
+
+
