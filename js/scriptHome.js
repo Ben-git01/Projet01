@@ -41,6 +41,7 @@ nivDiff.forEach(function(rb) {
   });
 });
 
+
 /* ============== POPUP SETTINGS ================= */
 function checkRequire() {
   let verifUsername = username.value.trim() !== "";
