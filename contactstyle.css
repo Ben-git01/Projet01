@@ -3,13 +3,13 @@
 }
 
 
-main {
+/* main {
     display: flex; 
     justify-content: center;
     background-image: url("assets/img/background/Background-pipe.png");
     background-repeat:no-repeat;
     background-position: center;
-}
+} */
 form {
     padding: 15%;
     height: 90vh;
