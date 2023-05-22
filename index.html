@@ -1,78 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style/style.css">
-  
+    <link rel="stylesheet" href="style/Home.css">
+    <link rel="stylesheet" href="style/NavBar.css">
+    <link rel="stylesheet" href="style/Structure.css">
+    <link rel="stylesheet" href="style/Popup-settings.css">
+    
+    <title>Home - The Legend of Chicken</title>
 
 </head>
 <body>
+    <header>
+    <nav class="navbar">
 
-    <div class="game-container">
+        <img src="./assets/img/nav-bar/Logo.png" alt="menu-burger" class="logo"> 
+         
 
-
-        <div class="Layer-Box Box1">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
+        <div class="nav-links">
+            
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">A propos</a></li>
+                <li><a href="#">Scores</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
-        <div class="Layer-Box Box2">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
+        <img src="assets/img/nav-bar/logo-menu-burger.png" alt="menu" class="menu-hamburger">
+    </nav>
+</header>
+  
+   <main>
+
+    <div id="popup-sets" class="popup-settings">
+
+        <div class="titrePopup">
+            <h1>Settings</h1>
         </div>
-        <div class="Layer-Box Box3" >
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box4">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box5">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box6">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-        <div class="Layer-Box Box7">
-            <img src="assets/img/poulets/Poulet.png" alt="image">
-        </div>
-
-        <img class="img-background" id="img-backGame" src="assets/img/background/Background-pipe.png" alt="image">
-
-        <button type="button" id="btn" class="bp-play" onclick="startGame()">Click Here!</button>
-        <button type="button" id="btn-montee" class="bp-play bt-mont" onclick="montee()">montee</button>
-        <button type="button" id="btn-descente" class="bp-play btn-desc" onclick="descente()">descente</button>
-
-
-    </div>
-
-
-
     
+        <div class="Sets">
+            <div class="Sets-user">
+                <label for="username"> Username : </label>
+                <input id="username" type="text" name="username"> 
+            </div>
+            <div class="Sets-difficulty">
+                
+        
+    
+                    <div class="radio-btn">
+                        <input type="radio" id="sel-easy" name="sel-easy" value="easy">
+                        <label for="sel-easy">Easy</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="sel-medium" name="sel-medium" value="medium">
+                        <label for="sel-medium">Medium</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="sel-hard" name="sel-hard" value="hard">
+                        <label for="sel-hard">Hard</label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" id="sel-impossible" name="sel-impossible" value="impossible">
+                        <label for="sel-impossible">Impossible</label>
+                    </div>
+                
+            </div>
+
+            <button class="btn-game" id="btnStart" onclick="startGame()"> <span id="text-btnGame"> </span> </button>
+
+        </div>
+    
+    
+    
+    </div>
+    
+
+
+
+
+    <button id="buttonRun" class="button-run" onclick="startGameSets()" href="#">RUN</button>
+
+
+   </main>
+
+
+   <footer>
+        <span class="text-footer-left"> <i>Projet fait par des wilders pour des wilders</i></span>
+        <span class="text-footer-right"> #WCS mai 2023 </span>
+   </footer>
+
 </body>
 
+<script src="js/scriptHome.js"></script>
+<script src="js/varGlobales.js"></script>
 
-<script>
-
-    function reportsize(){
-
-    let imgBack= document.getElementById('img-backGame');
-
-    let realHeight = window.innerHeight;
-    let realWidth = window.innerWidth;
-
-    // Calcul hauteur grille (branche à 78%) 
-    let hauteurCalculee = (78/100) * realHeight;
-    let aspectRatio = realWidth/realHeight;
-
-    console.log("largeur : " + realWidth + " Hauteur : " + realHeight);
-    console.log("ratio : " +aspectRatio);
-    }
-    
-    window.onresize = reportsize;
-    
-
-</script>
-<script type="text/javascript" src="settings.js"></script>
+<!-- <script src="js/gameplay.js"></script> -->
 
 </html>
