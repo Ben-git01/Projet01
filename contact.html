@@ -5,13 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="contactstyle.css">
+    <link rel="stylesheet" href="style/Contact.css">
+    <link rel="stylesheet" href="style/NavBar.css">
+    <link rel="stylesheet" href="style/Structure.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
+
 
 
 </head>
 <body>
-
+    <header>
+        <nav class="navbar">
+    
+            <img src="./assets/img/nav-bar/Logo.png" alt="menu-burger" class="logo"> 
+             
+    
+            <div class="nav-links">
+                
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="APropos.html">A propos</a></li>
+                    <li><a href="score.html">Scores</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <img src="assets/img/nav-bar/logo-menu-burger.png" alt="menu" class="menu-hamburger">
+        </nav>
+    </header>
+      
 <main>
         <div class="contact">
     <form>
@@ -49,7 +72,7 @@
                 <label for="comment">Message :</label>
                 <textarea id="comment" rows="10"></textarea>
             </div>
-            <div> <br>
+            <div class="buttonClass"> <br>
                 <button type="envoyer">Envoyer</button> 
             </div>
         
@@ -59,9 +82,13 @@
 
 
 </main>
-<footer>
-    <li></li>
-</footer>
+
+    <footer>
+        <span class="text-footer-left"> <i>Projet fait par des wilders pour des wilders</i></span>
+        <span class="text-footer-right"> #WCS mai 2023 </span>
+   </footer>
+ 
+
 
 </body>
 </html>
