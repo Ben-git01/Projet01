@@ -13,25 +13,33 @@
     
 }
 
+/* Liens nav */
 a {
     color: white;
 }
 
 
 .logo{
-height: 80%;
-margin-left: 2rem;
+height: auto;
+
+}
+
+.nav-links{
+    margin-right:2rem;
 }
 
 .navbar .nav-links ul {
     display : flex;
-    font-size: 1.5em;
+    font-size: 1.3em;
+    /* margin-right:2rem; */
+    gap: 3rem; /*Modif antoine*/
     
 }
-.navbar .nav-links ul li{
-    margin: 0 25px;
+/*Mis en commentaire par antoine (Pour les margin px, remplacement par un gap dans ul) */
    
-}
+/* .navbar .nav-links ul li{
+    /* margin: 0 25px;  
+} */
 
 .navbar .nav-links ul li.active a{
     color: red;
@@ -40,15 +48,13 @@ margin-left: 2rem;
 
 .navbar .menu-hamburger{
     display: none;
-    position: absolute;
+    height:100%;
+
+    /* antoine - Mis en commentaire remplacement par height:100% pour qu'il soit contenu dans la div :) */
+    /* position: absolute;
     top: 50px;
     right: 50px;
-    width: 35px;
-}
-
-.nav-links{
-    font-family:'Rye', cursive;
-
+    width: 35px; */
 }
 
 
@@ -58,13 +64,19 @@ margin-left: 2rem;
         padding: 0;
     }
     .navbar .logo{
-        position: absolute;
+        height:70%;
+        margin-left: 1rem;
+
+        /* position: absolute;
         top: 50px;
         left: 50px;
+        height: auto;
+        max-width: 30%; */
     }
 
     .navbar .menu-hamburger{
         display: block;
+        z-index:20;
     }
 
     .nav-links{
@@ -79,8 +91,19 @@ margin-left: 2rem;
         justify-content: center;
         margin-left: -100%;
         transition: all 0.5 ease;
-
+        z-index:10;
+        
     }
+  
+    /* .nav-links{
+        /* position: absolute; */
+        
+        /* top:0;
+        left:0;
+        height:100vh;
+        background: black;
+
+    } */ 
 
     .nav-links.mobile-menu {
         margin-left: 0;
@@ -88,13 +111,23 @@ margin-left: 2rem;
     }
 
     .nav-links ul{
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .navbar .nav-links ul li{
-        margin: 25px 0;
+        /* margin: 25px 0; */
+        margin-top:5rem;
         font-size: 1.2em;
+    }
+
+}
+
+
+@media screen and (min-width: 900px) {
+    
+    .logo{
+        height:70%;
+        margin-left: 1rem;
     }
 }
