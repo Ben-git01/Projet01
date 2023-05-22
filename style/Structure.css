@@ -14,7 +14,7 @@
     }
 
     h1{
-        font-size: 1rem
+        font-size: 1.4rem
     }
 
     label, input{
@@ -22,7 +22,11 @@
     }
 
     .contact{
-        width:80%;
+        width:75%;
+    }
+    .buttonClassContact{
+        width:40vw;
+        height: 5vh;
     }
 }
 
@@ -35,6 +39,11 @@
 .contact{
     width:40%;
 }
+.buttonClassContact{
+    width:15vw;
+    height: 5vh;
+}
+
 }
 
 /* GENERAL */
