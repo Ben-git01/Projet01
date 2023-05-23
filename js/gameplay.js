@@ -8,8 +8,7 @@ window.addEventListener("load", function() {
       gameContainer.style.opacity = "1";
     }, 0);
 
-    let divUser = document.getElementById("User");
-    divUser.innerHTML = settings.user;
+   
 
     CompteArebourds();
 
@@ -28,7 +27,6 @@ window.addEventListener("load", function() {
                 /* LANCEMENT DU JEU  */
                 /* - - - - - - - - - */
 
-
 /*Run -> utilisateur rentre user + difficulté
 /*Execute startGame()
 /ù
@@ -41,12 +39,18 @@ window.addEventListener("load", function() {
 
 
 const startGame = () => {
+  
+  let settingsJSON2 = sessionStorage.getItem('Parametres');
 
+  // Conversion de la chaîne JSON en objet JavaScript
+  let settingsLocal = JSON.parse(settingsJSON2);
+  console.log("Session : " + settingsLocal.user);
+  
   //On initialise les réglages (difficulté, nom user...)
-  gameInit(settings);
+  gameInit(settingsLocal);
 
   //On rentre dans la loop de jeu  
-  startLoop();
+  startLoop(settingsLocal);
 };
 
 
@@ -55,13 +59,9 @@ const startGame = () => {
 /*     START  LOOP     */
 /* ~~~~~~~~~~~~~~~~~~~ */
 
-function startLoop() {
+function startLoop(settings) {
 
-  //Init du score à 0
-  objScore.scoreActive = 0;
 
-  //Init pas d'animation sur poulets
-  TabAnimPouletEnCours = [false, false, false, false, false, false, false];
 
   //Définition d'un timer d'interval
   //Il va executer la fonction genRandom tous les delayGen (500ms par exemple)
@@ -72,6 +72,11 @@ function startLoop() {
   setTimeout(function() {
     clearInterval(timerInterval);
     console.log("Jeu terminé");
+
+    //Affichage score, bp page score, Rejouer
+    AffichageFinPartie();
+
+
   }, settings.dureeJeu);
 }
 
