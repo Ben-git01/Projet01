@@ -25,7 +25,7 @@
 
     .popup-settings{
         width:40%;
-        height:30%;
+        height:40%;
 }
 
 .btn-game{
@@ -39,7 +39,7 @@
 }
 
 .btn-game{
-    margin : 1rem;
+    margin-top : 1rem;
     height:20%;
     /* background-color: green;
     height:10%;
@@ -54,7 +54,7 @@
     font-size: 1rem;
 }
 .popup-settings{
-    /* visibility: hidden; */
+    visibility: hidden;
     background-color: white;
     opacity: 0.9;
     display:flex;

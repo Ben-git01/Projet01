@@ -1,4 +1,5 @@
 
+
 /* ====================================================== */
 /*                      SETTINGS                         */
 /* ====================================================== */
@@ -8,7 +9,7 @@
 /* ~~~~~~~~~~~ */
 
 
-const gameInit = () => {
+const gameInit = (settings) => {
   console.log("Initialisation .... ");
 
   // Difficultés du jeu
@@ -21,19 +22,19 @@ const gameInit = () => {
       break;
     case 'medium':
       settings.delayReap = 1000;
-      settings.delayVisible = 2000;
+      settings.delayVisible = 1000;
       settings.dureeJeu = 60000;
       console.log("Niveau moyen");
       break;
     case 'hard':
       settings.delayReap = 1000;
-      settings.delayVisible = 1000;
+      settings.delayVisible = 500;
       settings.dureeJeu = 60000;
       console.log("Niveau difficile");
       break;
     case 'impossible':
-      settings.delayReap = 1000;
-      settings.delayVisible = 1000;
+      settings.delayReap = 50;
+      settings.delayVisible = 50;
       settings.dureeJeu = 60000;
       console.log("Niveau difficile");
         break;
@@ -53,20 +54,25 @@ const gameInit = () => {
   console.log("delais reap : " + settings.delayReap);
   console.log("delais visible : " + settings.delayVisible);
 
+ //Init du score à 0
+ objScore.scoreActive = 0;
+
+ //Init pas d'animation sur poulets
+ TabAnimPouletEnCours = [false, false, false, false, false, false, false];
+ 
+
+ // Affichage user
+ console.log("Utilisateur dans fonction : " + settings.user);
+ let divUser = document.getElementById('User-text');
+ divUser.innerText = settings.user;
+
+
+
+
 };
 
 
-  //Init du score à 0
-  objScore.scoreActive = 0;
-
-  //Init pas d'animation sur poulets
-  TabAnimPouletEnCours = [false, false, false, false, false, false, false];
-  
-
-  // Affichage user
-  console.log(settings.user);
-  let divUser = document.getElementById('User-text');
-  divUser.innerText = settings.user;
+ 
 
 
 

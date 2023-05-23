@@ -27,7 +27,6 @@ window.addEventListener("load", function() {
                 /* LANCEMENT DU JEU  */
                 /* - - - - - - - - - */
 
-
 /*Run -> utilisateur rentre user + difficulté
 /*Execute startGame()
 /ù
@@ -40,12 +39,18 @@ window.addEventListener("load", function() {
 
 
 const startGame = () => {
+  
+  let settingsJSON2 = sessionStorage.getItem('Parametres');
 
+  // Conversion de la chaîne JSON en objet JavaScript
+  let settingsLocal = JSON.parse(settingsJSON2);
+  console.log("Session : " + settingsLocal.user);
+  
   //On initialise les réglages (difficulté, nom user...)
-  gameInit();
+  gameInit(settingsLocal);
 
   //On rentre dans la loop de jeu  
-  startLoop();
+  startLoop(settingsLocal);
 };
 
 
@@ -54,7 +59,7 @@ const startGame = () => {
 /*     START  LOOP     */
 /* ~~~~~~~~~~~~~~~~~~~ */
 
-function startLoop() {
+function startLoop(settings) {
 
 
 

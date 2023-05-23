@@ -89,8 +89,16 @@ btnStart.addEventListener("click", function() {
   settings.user = username.value;
   
   console.log("User : " + settings.user + " Difficulté : " + settings.difficulty);
-  let navUrl = "Game.html?user=" + username.value;
-  window.location.href = navUrl;
+
+  /* MISE EN CACHE DANS VARIABLE SESSION */
+// Conversion de l'objet en une chaîne JSON
+let settingsJSON = JSON.stringify(settings);
+
+// Stockage de la chaîne JSON dans sessionStorage
+sessionStorage.setItem('Parametres', settingsJSON);
+
+
+  window.location.href = "Game.html";
 });
 
 

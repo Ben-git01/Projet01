@@ -100,6 +100,9 @@ body::before{
   position:absolute;
   color:white;
   z-index:1;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Score{
@@ -109,6 +112,10 @@ body::before{
 
 .User{
     font-size: 3rem; 
+    /* border: 8px dashed white;
+    border-top: none;
+    border-radius: 100%; */
+    
 }
 
 .ExitGame{
@@ -266,17 +273,17 @@ body::before{
     height: 15.96%;
     width: 20.79%;
     /*offset*/
-    left:45%;
+    left:50%;
     top: 7.79%;
     
 
 }
 
 .User{
-    height: 15.96%;
+    height: 7.96%;
     width: 20.79%;
     /*offset*/
-    left:45%;
+    left:50%;
     top: 0;
    
 }
