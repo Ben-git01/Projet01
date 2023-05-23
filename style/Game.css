@@ -45,7 +45,7 @@
 }
 @media screen and (min-width: 900px){
     .Score, .User{
-        font-size: 5rem; 
+        font-size: 4rem; 
     }
     
 }
@@ -302,7 +302,7 @@ img{
     width: 20.79%;
     /*offset*/
     left:50%;
-    top: 7.79%;
+    top: 8.79%;
     
 
 }
@@ -312,7 +312,7 @@ img{
     width: 20.79%;
     /*offset*/
     left:50%;
-    top: 0;
+    top: 01%;
    
 }
 
