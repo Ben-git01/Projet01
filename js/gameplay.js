@@ -156,7 +156,7 @@ function PouletTouche(numDivRandom) {
   TabAnimPouletEnCours[numDivRandom] = false;
   tabEventListenners[numDivRandom] = false;
 
-  objScore.scoreActive++;
+  objScore.scoreActive = objScore.scoreActive + numDivRandom +1 ;
   
   majAffScore();
   
