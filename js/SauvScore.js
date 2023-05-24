@@ -11,16 +11,18 @@ function sauvegarderPartie(nomJoueur, score, niveauDifficulte) {
     } else {
       console.log('Sauvegarde effectuée avec succès.');
     }
+
   });
+
 }
 
 function chargerSauvegardes() {
   // Lire les sauvegardes précédentes
   fs.readFile('sauvegardes.txt', 'utf8', (err, data) => {
-    
+    // Boucle dès qui voit un /n sauvegarde les caractères avant   split('/n') split(',')
     //Code ici - gogogo 
-    
-  
+
+
   })
 }
 
