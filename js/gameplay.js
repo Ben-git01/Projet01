@@ -54,7 +54,7 @@ const startGame = () => {
 
 
 /* ~~~~~~~~~~~~~~~~~~~ */
-/*     START  LOOP     */
+/*  => START  LOOP     */
 /* ~~~~~~~~~~~~~~~~~~~ */
 
 function startLoop(settings) {
@@ -73,6 +73,7 @@ function startLoop(settings) {
 
     //Affichage score, bp page score, Rejouer
     // AffichageFinPartie();
+
     //Sauvegarde du score
     sauvegarderPartie(settings.user, settings.difficulty, objScore.scoreActive);
 

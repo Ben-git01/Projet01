@@ -47,12 +47,12 @@
     display:flex; */
 }
 
-
 #username {
     border: none;
     border-bottom: 2px solid black;
     font-size: 1rem;
 }
+
 .popup-settings{
     visibility: hidden;
     background-color: white;

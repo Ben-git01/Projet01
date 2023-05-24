@@ -1,6 +1,8 @@
-const fs = require('fs');
+
 
 function sauvegarderPartie(nomJoueur, score, niveauDifficulte) {
+ 
+
   // Format de sauvegarde : "Nom du joueur,Score,Niveau de difficulté"
   const sauvegarde = `${nomJoueur},${score},${niveauDifficulte}\n`;
 
@@ -19,7 +21,9 @@ function sauvegarderPartie(nomJoueur, score, niveauDifficulte) {
 
 // Tableau des players
 
-let tabPlayers = new Array();
+
+let tabPlayers = [];
+
 
 
 
@@ -78,9 +82,9 @@ let scoreTest = JSON.parse(settingsJSON3);
 console.log("Session : " + scoreTest);
 
 
-let test;
 
-test = chargerSauvegardes();
+
+
 
 console.log(test);
 
