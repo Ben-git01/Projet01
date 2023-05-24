@@ -56,7 +56,7 @@ const startGame = () => {
 
 
 /* ~~~~~~~~~~~~~~~~~~~ */
-/*     START  LOOP     */
+/*  => START  LOOP     */
 /* ~~~~~~~~~~~~~~~~~~~ */
 
 function startLoop(settings) {
@@ -74,8 +74,13 @@ function startLoop(settings) {
     console.log("Jeu terminé");
 
     //Affichage score, bp page score, Rejouer
-    AffichageFinPartie();
-
+    // AffichageFinPartie();
+    const fs = require('fs');
+    sauvegarderPartie(settings.user, settings.score, settings.difficulty);
+    console.log("Sauvegarde effectuee");
+    chargerSauvegardes();
+    console.log("Chargement");
+    console.log(tabPlayers);
 
   }, settings.dureeJeu);
 }
