@@ -37,6 +37,20 @@
 }
 }
 
+@media screen and (max-width: 900px){
+
+    .Score, .User{
+        font-size: 2rem; 
+    }
+}
+@media screen and (min-width: 900px){
+    .Score, .User{
+        font-size: 4rem; 
+    }
+    
+}
+
+
 
 /* ========================================= */
 
@@ -76,6 +90,17 @@ body::before{
     transform: translateY(-50%);
     opacity:0;
     transition: opacity 3s;
+ 
+  
+}
+
+img{
+    -webkit-user-drag: none; 
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 /* ===================   / menu haut du jeu   ================= */
@@ -83,17 +108,9 @@ body::before{
 /* MENU DU HAUT GAME CONTAINER */
 /* SCORE, USER, EXIT */
 
-.PaletteGame{
-    position: absolute;
-    /* background-color: white; */
-    width:100%;
-    height:10%;
-    z-index:2;
-    
-    
-}
 
-.infos{
+
+/* .infos{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -102,12 +119,38 @@ body::before{
     gap:4rem;
     margin:2rem;
     font-size: 3rem; 
+} */
+
+.Score, .User, .ExitGame{
+  position:absolute;
+  color:white;
+  z-index:1;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.score{
-    font-size: 4rem; 
+.Score{
    
+    text-align: center;
 }
+
+.User{
+    
+    /* border: 8px dashed white;
+    border-top: none;
+    border-radius: 100%; */
+    
+}
+
+.ExitGame{
+    font-size: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 /* Classe d'animation text score qui zoom */
 .zoom-effect {
@@ -122,21 +165,29 @@ body::before{
     position : absolute;
     width:50%;
     height:50%;
-    z-index: 120;
-    transform: translate(50%,50%);
-}
-
-.text-decompte{
-    display:flex;
-    padding: 10rem;
-    border-radius: 90%;
+    z-index: 2;
+    top:25%;
+    left: 25%;
     background-color: white;
     opacity:0.5;
-    justify-content: center;
-    align-items: center;
-    color:black;
-    font-size: 10rem;
+    border-radius: 90%;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    z-index: 2;
+    top: 25%;
+    left: 25%;
+    background-color: white;
+    opacity: 1;
+    border-radius: 90%;
+    font-size: 9rem;
+    display: flex; 
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    
 }
+
+
 
 
 .animText-decompte{
@@ -150,6 +201,8 @@ body::before{
     /* background-color: rgba(128, 128, 128, 0.243); */
     z-index: 1;
     overflow: hidden;
+
+
 }
 
 .Layer-Box img{
@@ -158,6 +211,7 @@ body::before{
     width:100%;
     object-fit: contain;
      /* transform: translate(0, -100%);  */
+ 
 }
 
 
@@ -241,6 +295,34 @@ body::before{
     /*Offset*/
     left: 78.41%;
     top :24.54%;
+}
+
+.Score{
+    height: 15.96%;
+    width: 20.79%;
+    /*offset*/
+    left:50%;
+    top: 8.79%;
+    
+
+}
+
+.User{
+    height: 7.96%;
+    width: 20.79%;
+    /*offset*/
+    left:50%;
+    top: 01%;
+   
+}
+
+.ExitGame{
+    height: 10.5%;
+    width: 13.7%;
+    /*offset*/
+    left:82%;
+    top: 0%;
+  
 }
 
 
