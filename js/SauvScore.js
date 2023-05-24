@@ -22,9 +22,12 @@ function sauvegarderPartie(nomJoueur, score, niveauDifficulte) {
 // Tableau des players
 
 
+let tabPlayers = [];
+
+
+
 
 function chargerSauvegardes() {
-
 
   fs.readFile('sauvegardes.txt', 'utf8', (err, data) => {
     // Boucle dès qui voit un /n sauvegarde les caractères avant   split('/n') split(',')
@@ -79,8 +82,10 @@ let scoreTest = JSON.parse(settingsJSON3);
 console.log("Session : " + scoreTest);
 
 
-let test;
-test = chargerSauvegardes();
+
+
+
+
 console.log(test);
 
 

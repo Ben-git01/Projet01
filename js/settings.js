@@ -1,13 +1,12 @@
 
 
 /* ====================================================== */
-/*                      SETTINGS                         */
+/*                      SETTINGS                          */
 /* ====================================================== */
 
 /* ~~~~~~~~~~~ */
 /*    INIT     */
 /* ~~~~~~~~~~~ */
-
 
 const gameInit = (settings) => {
   console.log("Initialisation .... ");
@@ -17,21 +16,25 @@ const gameInit = (settings) => {
     case 'easy':
       settings.delayReap = 1000;
       settings.delayVisible = 3000;
+
       console.log("Niveau facile");
       break;
     case 'medium':
       settings.delayReap = 1000;
       settings.delayVisible = 1000;
+
       console.log("Niveau moyen");
       break;
     case 'hard':
       settings.delayReap = 1000;
       settings.delayVisible = 500;
+
       console.log("Niveau difficile");
       break;
     case 'impossible':
       settings.delayReap = 50;
       settings.delayVisible = 50;
+
       console.log("Niveau difficile");
         break;
     default:
