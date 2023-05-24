@@ -72,9 +72,9 @@ function startLoop(settings) {
     console.log("Jeu terminé");
 
     //Affichage score, bp page score, Rejouer
-    AffichageFinPartie();
+    // AffichageFinPartie();
     //Sauvegarde du score
-    sauvegarderPartie(nomJoueur, score, niveauDifficulte);
+    sauvegarderPartie(settings.user, settings.difficulty, objScore.scoreActive);
 
 
   }, settings.dureeJeu);
