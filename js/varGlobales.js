@@ -1,16 +1,15 @@
-
 /* DECLARATION DES VARIABLES ET OBJETS */
 
 //Génération de la table poulet & transfert settings
 let tabPoulets = [];
 
 let objPoulet = {
-  classActive: '',
+  classActive: "",
   touche: false,
-  delayReap: '0s',
-  delayVisible: '2s',
+  delayReap: "0s",
+  delayVisible: "2s",
   nbreClicsReussis: 0,
-  nbreClicsRate: 0
+  nbreClicsRate: 0,
 };
 
 //Définition objet score
@@ -19,18 +18,19 @@ let objScore = {
   indexClicsReussis: 0,
   indexClicsRates: 0,
   ratioReussite: 0,
-  mapPouletTouche: []
+  mapPouletTouche: [],
 };
 
 //Définition des réglages
 let settings = {
-  user: '',
-  difficulty: '',
+  partieEnCours: false,
+  user: "",
+  difficulty: "",
   delayReap: 5000,
   delayVisible: 2000,
   delayGen: 150,
-  dureeJeu: 2000,
-  nbrePoulets: 7
+  dureeJeu: 30000,
+  nbrePoulets: 7,
 };
 
 let TabAnimPouletEnCours = [];
@@ -43,6 +43,14 @@ let trigger = true;
 
 let tabPlayers = [];
 
-
-
-
+const phrasesPiafRandom = [
+  "🍗🍗",
+  "⤵️ T'es mauvais jack ⤵️",
+  "Fais un effort 😱",
+  "J'ai faim 🤓 ",
+  "Je suis à court d'inspi 📖",
+  "Mais pourquoi ?? 😂",
+  "Vise droit 🎯",
+  "Pas le décors on a dit ⛔ ",
+  "Mets des paillettes Kévin 🌟",
+];
