@@ -2,24 +2,6 @@
     font-family: 'Rye';
 }
 
-@media screen and (min-width:900px){
-.contact{
-    width:50%;
-}
-
-form{
-    gap:1.5rem;
-}
-    
-}
-
-@media screen and (max-width:900px){
-
-    form{
-        gap:0.5rem;
-    }
-
-}
 
 body{
     background-image: url("../assets/img/background/back1.png");
@@ -28,33 +10,21 @@ body{
     background-repeat: no-repeat;
     }
 
-
- main {
+main {
     display: flex; 
     justify-content: center;
     align-items: center;
 } 
 
-.contact {
-    display:flex;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: rgb(211, 212, 206);
-    border: 5px solid #f9faf7;
-}
 
 
 form {
-    padding: 10%;
+    padding: 15%;
     /* margin-left: auto; */
     /* margin-right: auto; */
     display:flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width:100%;
-    height:100%;
-   
-
     
 }
 
@@ -65,6 +35,7 @@ input, textarea {
     width: 98%;
     background-color:#e7dede;
     border-radius: 5px;
+    resize: none;
 }
 
 .buttonClass{
@@ -77,16 +48,25 @@ margin-top:2rem;
 
 
 button{
+    
     color: #e7dede;
     background-color: rgb(105, 170, 40);
     border-radius: 7px;
     border-color: #e7dede 30%;
-    padding:0.5rem;
+
+
 }
 
-h1{
-    text-align: center;
-    height:15%;
-}
 
+.contact {
+
+    
+    
+    /* width: 30rem; */
+    border-radius: 10px;
+    /* margin-top: 30rem; */
+    background-color: rgb(211, 212, 206);
+    border: 5px solid #f9faf7;
+
+}
 
