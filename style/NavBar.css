@@ -1,0 +1,135 @@
+/* ============ NAV BAR ============= */
+.navbar {
+    /* padding : 1em; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #cd542c;
+    /* border-bottom: 7px solid white;*/
+
+}
+
+/* Liens nav */
+a {
+    color: white;
+}
+
+
+.logo {
+    height: auto;
+
+}
+
+.nav-links {
+    margin-right: 2rem;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+    font-size: 1.3em;
+    /* margin-right:2rem; */
+    gap: 3rem;
+    /*Modif antoine*/
+
+}
+
+/*Mis en commentaire par antoine (Pour les margin px, remplacement par un gap dans ul) */
+
+/* .navbar .nav-links ul li{
+    /* margin: 0 25px;  
+} */
+
+.navbar .nav-links ul li.active a {
+    color: red;
+    font-weight: 600;
+}
+
+.navbar .menu-hamburger {
+    display: none;
+    height: 100%;
+
+    /* antoine - Mis en commentaire remplacement par height:100% pour qu'il soit contenu dans la div :) */
+    /* position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 35px; */
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar .logo {
+        height: 70%;
+        margin-left: 1rem;
+
+        /* position: absolute;
+        top: 50px;
+        left: 50px;
+        height: auto;
+        max-width: 30%; */
+    }
+
+    .navbar .menu-hamburger {
+        display: block;
+        z-index: 20;
+    }
+
+    .nav-links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.297);
+        backdrop-filter: blur(8px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        margin-left: -100%;
+        transition: all 0.5 ease;
+        z-index: 10;
+
+    }
+
+    /* .nav-links{
+        /* position: absolute; */
+
+    /* top:0;
+        left:0;
+        height:100vh;
+        background: black;
+
+    } */
+
+    .nav-links.mobile-menu {
+        margin-left: 0;
+
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links ul li {
+        /* margin: 25px 0; */
+        margin-top: 5rem;
+        font-size: 1.2em;
+    }
+
+}
+
+
+@media screen and (min-width: 900px) {
+
+    .logo {
+        height: 70%;
+        margin-left: 1rem;
+    }
+}
