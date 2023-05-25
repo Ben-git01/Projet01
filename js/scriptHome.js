@@ -1,21 +1,17 @@
-
-
-
-function startGameSets(){
-
-    const bpRun = document.getElementById('buttonRun');
-    bpRun.style.visibility = "hidden";
-    
-    
-    const popupReglages = document.getElementById('popup-sets'); 
-    popupReglages.style.visibility = "visible";
-    popupReglages.style.transform =  "translateY(20%)";
-    popupReglages.style.transition= "transform 1s ease-in-out";
-   
-   
-   }
-   
 /* ============== BOUTON RUN ================ */
+function startGameSets() {
+  let fondSonore = new Audio("22-caliber-with-ricochet-39679.mp3");
+  fondSonore.play();
+  const bpRun = document.getElementById("buttonRun");
+  bpRun.style.visibility = "hidden";
+
+  const popupReglages = document.getElementById("popup-sets");
+  popupReglages.style.visibility = "visible";
+  popupReglages.style.transform = "translateY(20%)";
+  popupReglages.style.transition = "transform 1s ease-in-out";
+}
+
+/* ============== BOUTON START ================ */
 const btnStart = document.getElementById("btnStart");
 
 /* VERIFICATION DONNEES ENTREES UTILISATEUR */
@@ -24,9 +20,9 @@ username.addEventListener("input", checkRequire);
 
 /* VERIFICATION NIVEAU DIFFICULTE */
 let nivDiff = document.querySelectorAll('input[type="radio"]');
-nivDiff.forEach(function(rb) {
-  rb.addEventListener("change", function() {
-    nivDiff.forEach(function(desactivAutreBp) {
+nivDiff.forEach(function (rb) {
+  rb.addEventListener("change", function () {
+    nivDiff.forEach(function (desactivAutreBp) {
       if (desactivAutreBp !== rb) {
         desactivAutreBp.checked = false;
       }
@@ -35,41 +31,41 @@ nivDiff.forEach(function(rb) {
   });
 });
 
-
 /* ============== POPUP SETTINGS ================= */
 function checkRequire() {
   let verifUsername = username.value.trim() !== "";
   console.log(verifUsername);
-  
 
   let niveauSelected = false;
-  nivDiff.forEach(function(rb) {
+  nivDiff.forEach(function (rb) {
     if (rb.checked) {
       niveauSelected = true;
     }
   });
 
-  if (verifUsername && niveauSelected) { 
+  if (verifUsername && niveauSelected) {
     let difficulte = returnNiveauSelected();
     btnStart.disabled = false;
-    btnStart.style.visibility= "visible";
-    btnStart.style.display= "block";
-    
+    btnStart.style.visibility = "visible";
+    btnStart.style.display = "block";
+
     switch (difficulte) {
+      case "easy":
+        btnStart.innerHTML = "Poule mouillée 😏";
+        break;
 
-      case "easy":  btnStart.innerHTML = "Poule mouillée 😏";
-      break;
+      case "medium":
+        btnStart.innerHTML = "Allons-y gaiement 🐔";
+        break;
 
-      case "medium":  btnStart.innerHTML = "Allons-y gaiement 🐔";
-      break;
+      case "hard":
+        btnStart.innerHTML = "Tu prends la confiance 🤠";
+        break;
 
-       case "hard":  btnStart.innerHTML = "Tu prends la confiance 🤠";
-      break;
-
-      case "impossible":  btnStart.innerHTML = "RIP 😱😱😱";
-      break;
+      case "impossible":
+        btnStart.innerHTML = "RIP 😱😱😱";
+        break;
     }
-   
   } else {
     btnStart.style.display = "none";
   }
@@ -83,29 +79,29 @@ medium : ... */
 checkRequire();
 
 /* =========== BOUTON GO ========== */
-btnStart.addEventListener("click", function() {
- 
+btnStart.addEventListener("click", function () {
   settings.user = username.value;
-  console.log("test duree du jeu : " +settings.dureeJeu);
-  
-  console.log("User : " + settings.user + " Difficulté : " + settings.difficulty);
+  console.log("test duree du jeu : " + settings.dureeJeu);
+
+  console.log(
+    "User : " + settings.user + " Difficulté : " + settings.difficulty
+  );
 
   /* MISE EN CACHE DANS VARIABLE SESSION */
-// Conversion de l'objet en une chaîne JSON
-let settingsJSON = JSON.stringify(settings);
+  // Conversion de l'objet en une chaîne JSON
+  let settingsJSON = JSON.stringify(settings);
 
-// Stockage de la chaîne JSON dans sessionStorage
-sessionStorage.setItem('Parametres', settingsJSON);
-console.log(tabPlayers);
+  // Stockage de la chaîne JSON dans sessionStorage
+  sessionStorage.setItem("Parametres", settingsJSON);
+  console.log(tabPlayers);
 
- window.location.href = "Game.html";
- 
+  window.location.href = "Game.html";
 });
 
-
 function returnNiveauSelected() {
-  settings.difficulty = document.querySelector('input[name^="sel-"]:checked').value;
+  settings.difficulty = document.querySelector(
+    'input[name^="sel-"]:checked'
+  ).value;
   console.log(settings.difficulty);
   return settings.difficulty;
 }
-   

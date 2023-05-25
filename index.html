@@ -1,106 +1,133 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rye&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style/Home.css">
-    <link rel="stylesheet" href="style/NavBar.css">
-    <link rel="stylesheet" href="style/Structure.css">
-    <link rel="stylesheet" href="style/Popup-settings.css">
+    <link rel="stylesheet" href="style/Home.css" />
+    <link rel="stylesheet" href="style/NavBar.css" />
+    <link rel="stylesheet" href="style/Structure.css" />
+    <link rel="stylesheet" href="style/Popup-settings.css" />
 
     <title>Home - The Legend of Chicken</title>
+  </head>
 
-</head>
+  <body>
+    <script></script>
 
-<body>
     <header>
-        <nav class="navbar">
+      <nav class="navbar">
+        <img
+          src="./assets/img/nav-bar/Logo.png"
+          alt="menu-burger"
+          class="logo"
+        />
 
-            <img src="./assets/img/nav-bar/Logo.png" alt="menu-burger" class="logo">
-
-
-            <div class="nav-links">
-
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">A propos</a></li>
-                    <li><a href="score.html">Scores</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <img src="assets/img/nav-bar/logo-menu-burger.png" alt="menu" class="menu-hamburger">
-        </nav>
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">A propos</a></li>
+            <li><a href="score.html">Scores</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <img
+          src="assets/img/nav-bar/logo-menu-burger.png"
+          alt="menu"
+          class="menu-hamburger"
+        />
+      </nav>
     </header>
 
     <main>
-
-        <div id="popup-sets" class="popup-settings">
-
-            <div class="titrePopup">
-                <h1>Settings</h1>
-            </div>
-
-            <div class="Sets">
-                <div class="Sets-user">
-                    <label for="username"> Username : </label>
-                    <input id="username" type="text" name="username">
-                </div>
-                <div class="Sets-difficulty">
-
-
-
-                    <div class="radio-btn">
-                        <input type="radio" id="sel-easy" name="sel-easy" value="easy">
-                        <label for="sel-easy">Easy</label>
-                    </div>
-                    <div class="radio-btn">
-                        <input type="radio" id="sel-medium" name="sel-medium" value="medium">
-                        <label for="sel-medium">Medium</label>
-                    </div>
-                    <div class="radio-btn">
-                        <input type="radio" id="sel-hard" name="sel-hard" value="hard">
-                        <label for="sel-hard">Hard</label>
-                    </div>
-                    <div class="radio-btn">
-                        <input type="radio" id="sel-impossible" name="sel-impossible" value="impossible">
-                        <label for="sel-impossible">Impossible</label>
-                    </div>
-
-                </div>
-
-               <button class="btn-game" id="btnStart" > <span id="text-btnGame"> Go !!! </span> </button>
-
-            </div>
-
-
-
+      <div id="popup-sets" class="popup-settings">
+        <div class="titrePopup">
+          <h1>Settings</h1>
         </div>
 
+        <div class="Sets">
+          <div class="Sets-user">
+            <label for="username"> Username : </label>
+            <input id="username" type="text" name="username" />
+          </div>
+          <div class="Sets-difficulty">
+            <div class="radio-btn">
+              <input type="radio" id="sel-easy" name="sel-easy" value="easy" />
+              <label for="sel-easy">Easy</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                type="radio"
+                id="sel-medium"
+                name="sel-medium"
+                value="medium"
+              />
+              <label for="sel-medium">Medium</label>
+            </div>
+            <div class="radio-btn">
+              <input type="radio" id="sel-hard" name="sel-hard" value="hard" />
+              <label for="sel-hard">Hard</label>
+            </div>
+            <div class="radio-btn">
+              <input
+                type="radio"
+                id="sel-impossible"
+                name="sel-impossible"
+                value="impossible"
+              />
+              <label for="sel-impossible">Impossible</label>
+            </div>
+          </div>
 
+          <button class="btn-game" id="btnStart">
+            <span id="text-btnGame"> Go !!! </span>
+          </button>
+        </div>
+      </div>
 
-
-
-        <button id="buttonRun" class="button-run" onclick="startGameSets()" href="#">RUN</button>
-
-
+      <button
+        id="buttonRun"
+        class="button-run"
+        onclick="startGameSets()"
+        href="#"
+      >
+        RUN
+      </button>
     </main>
 
-
     <footer>
-        <span class="text-footer-left"> <i>Projet fait par des wilders pour des wilders</i></span>
-        <span class="text-footer-right"> #WCS mai 2023 </span>
+      <span class="text-footer-left">
+        <i>Projet fait par des wilders pour des wilders</i></span
+      >
+      <span class="text-footer-right"> #WCS mai 2023 </span>
     </footer>
+    <script>
+      window.addEventListener("load", function () {
+        let fondSonore = new Audio("assets/sound/fond_sonore.mp3");
+        let sonBp = new Audio(
+          "./assets/sound/boom-geomorphism-cinematic-trailer-sound-effects-123876.mp3"
+        );
 
-   <script src="js/varGlobales.js"></script>
-   <script src="js/navbar.js"></script>
-   <script src="js/scriptHome.js"></script>
-   <script src="js/gameplay.js"></script>
+        fondSonore.play();
+        sonBp.play();
+      });
 
-</body>
+      function beforeunload() {
+        fondSonore.pause();
+        fondSonore.currentTime = 0;
+      }
 
+      window.addEventListener("beforeunload", beforeunload);
+    </script>
 
+    <script src="js/varGlobales.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/scriptHome.js"></script>
+    <script src="js/gameplay.js"></script>
+  </body>
 </html>
