@@ -89,9 +89,7 @@ body::before{
     top: 50%;
     transform: translateY(-50%);
     opacity:0;
-    transition: opacity 3s;
- 
-  
+    transition: opacity 3s;  
 }
 
 img{

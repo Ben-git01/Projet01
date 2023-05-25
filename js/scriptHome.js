@@ -12,7 +12,6 @@ function startGameSets(){
     popupReglages.style.transform =  "translateY(20%)";
     popupReglages.style.transition= "transform 1s ease-in-out";
    
-    console.log(bpRun + popupReglages);
    
    }
    
@@ -87,6 +86,7 @@ checkRequire();
 btnStart.addEventListener("click", function() {
  
   settings.user = username.value;
+  console.log("test duree du jeu : " +settings.dureeJeu);
   
   console.log("User : " + settings.user + " Difficulté : " + settings.difficulty);
 
@@ -96,9 +96,10 @@ let settingsJSON = JSON.stringify(settings);
 
 // Stockage de la chaîne JSON dans sessionStorage
 sessionStorage.setItem('Parametres', settingsJSON);
+console.log(tabPlayers);
 
-
-  window.location.href = "Game.html";
+ window.location.href = "Game.html";
+ 
 });
 
 

@@ -1,2 +1,4 @@
 Alice,100,2
 Bob,75,1
+Michel, 78, 10
+
