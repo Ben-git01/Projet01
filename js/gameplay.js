@@ -34,9 +34,9 @@ const startGame = () => {
 
 function startLoop() {
   let fondSonore = document.createElement("audio");
-  fondSonore.src =
-    "/assets/sound/chicken-sounds-farm-background-sounds-ambient-sounds-143091.mp3";
+  fondSonore.src = "../assets/sound/fond-sonoreEnerve.mp3";
   fondSonore.play();
+
   partieEnCours = true;
   //Définition d'un timer d'interval
   //Il va executer la fonction genRandom tous les delayGen (500ms par exemple)
@@ -175,6 +175,9 @@ function majAffScore(operateur) {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 function CompteArebourds() {
+  let bruitStart = document.createElement("audio");
+  bruitStart.src = "../assets/sound/woosh.mp3";
+  bruitStart.play();
   let text = document.getElementById("text-decompte");
   let seconde = 4;
   let myAudio = document.createElement("audio");
@@ -215,7 +218,7 @@ gameContainer.addEventListener("click", function (event) {
     const LayerBox = event.target.closest(".Layer-Box img");
     let rate = false;
 
-    if (compteurErrSelec > 1) {
+    if (compteurErrSelec >= 1) {
       if (LayerBox) {
         const layerBoxPosition = Array.from(
           document.querySelectorAll(".Layer-Box")
