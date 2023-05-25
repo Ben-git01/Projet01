@@ -1,99 +1,100 @@
-
-
 /* ======================= Détection ratio fenêtre ================================ */
-/* => Image de 986.16px par 1285.2px soit ratio largeur/hauteur de 0.76             */ 
-/* => Si écran au-dessus (largeur>hauteur), on fixe la hauteur et ajuste la largeur */ 
-/* => Sinon l'inverse                                                               */ 
+/* => Image de 986.16px par 1285.2px soit ratio largeur/hauteur de 0.76             */
+/* => Si écran au-dessus (largeur>hauteur), on fixe la hauteur et ajuste la largeur */
+/* => Sinon l'inverse                                                               */
 
-@media screen and (min-aspect-ratio:19/25) 
- {
+@media screen and (min-aspect-ratio:19/25) {
 
     .game-container {
 
         height: 90vh;
         width: calc(90vh * 0.767);
-        object-fit:contain;
-        position:relative;
+        object-fit: contain;
+        position: relative;
         margin: 0 auto;
-        
-    } 
+
+    }
 
 }
 
 @media screen and (max-aspect-ratio:19/25) {
-    body{
+    body {
         background-color: yellow;
-     
-      
-      
+
+
+
     }
 
     .game-container {
-     width: 100vw;
-    height: calc(100vw * 1.3);
-    object-fit:contain;
-    position:relative;
-    margin: 0 auto; 
-}
-}
-
-@media screen and (max-width: 900px){
-
-    .Score, .User{
-        font-size: 2rem; 
+        width: 100vw;
+        height: calc(100vw * 1.3);
+        object-fit: contain;
+        position: relative;
+        margin: 0 auto;
     }
 }
-@media screen and (min-width: 900px){
-    .Score, .User{
-        font-size: 4rem; 
+
+@media screen and (max-width: 900px) {
+
+    .Score,
+    .User {
+        font-size: 1.6rem;
     }
-    
+}
+
+@media screen and (min-width: 900px) {
+
+    .Score,
+    .User {
+        font-size: 3rem;
+    }
+
 }
 
 
 
 /* ========================================= */
 
-body::before{       
+body::before {
     /* ::before pour manipuler l'opacité du body au chargement de la page*/
-    content:"";
+    content: "";
     background-image: url("../assets/img/background/back1.png");
     background-size: cover;
-    background-position: center ;
+    background-position: center;
     background-repeat: no-repeat;
-    position:absolute;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
-    opacity:0.75;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
 }
 
 
-.img-background{
-    
+.img-background {
+
     position: absolute;
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
     z-index: 0;
 }
 
 /* ==================================================================   VUE JEU   ============================================================ */
 
-.game-container{
-    border : 5px solid white;
+.game-container {
+    border: 5px solid white;
     border-radius: 2%;
-    box-shadow: 17px 13px 7px 0px rgba(0,0,0,0.15);
+    box-shadow: 17px 13px 7px 0px rgba(0, 0, 0, 0.15);
     /* Centrage */
     top: 50%;
     transform: translateY(-50%);
-    opacity:0;
-    transition: opacity 3s;  
+    opacity: 0;
+    transition: opacity 3s;
 }
 
-img{
-    -webkit-user-drag: none; 
+img {
+    -webkit-user-drag: none;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -119,31 +120,33 @@ img{
     font-size: 3rem; 
 } */
 
-.Score, .User, .ExitGame{
-  position:absolute;
-  color:white;
-  z-index:1;
-  display:flex;
-  justify-content: center;
-  align-items: center;
+.Score,
+.User,
+.ExitGame {
+    position: absolute;
+    color: white;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.Score{
-   
+.Score {
+
     text-align: center;
 }
 
-.User{
-    
+.User {
+
     /* border: 8px dashed white;
     border-top: none;
     border-radius: 100%; */
-    
+
 }
 
-.ExitGame{
+.ExitGame {
     font-size: 1rem;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -153,21 +156,21 @@ img{
 /* Classe d'animation text score qui zoom */
 .zoom-effect {
     animation: zoomAnimation 500ms;
-  }
+}
 
 /* ===================   Decompte du départ jeu   ================= */
 
 
 
-  .Decompte{
-    position : absolute;
-    width:50%;
-    height:50%;
+.Decompte {
+    position: absolute;
+    width: 50%;
+    height: 50%;
     z-index: 2;
-    top:25%;
+    top: 25%;
     left: 25%;
     background-color: white;
-    opacity:0.5;
+    opacity: 0.5;
     border-radius: 90%;
     position: absolute;
     width: 50%;
@@ -179,23 +182,25 @@ img{
     opacity: 1;
     border-radius: 90%;
     font-size: 9rem;
-    display: flex; 
-    justify-content: center; /* Centrage horizontal */
-    align-items: center; /* Centrage vertical */
-    
+    display: flex;
+    justify-content: center;
+    /* Centrage horizontal */
+    align-items: center;
+    /* Centrage vertical */
+
 }
 
 
 
 
-.animText-decompte{
+.animText-decompte {
     animation: zoomAnimation 500ms;
 }
 
 
 /* =================   / div des poulets   ================= */
-.Layer-Box{
-    position:absolute;
+.Layer-Box {
+    position: absolute;
     /* background-color: rgba(128, 128, 128, 0.243); */
     z-index: 1;
     overflow: hidden;
@@ -203,124 +208,125 @@ img{
 
 }
 
-.Layer-Box img{
-    visibility: hidden; 
-    height:100%;
-    width:100%;
+.Layer-Box img {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
-     /* transform: translate(0, -100%);  */
- 
+    /* transform: translate(0, -100%);  */
+
 }
 
 
 /* =============   classes animations poulets   ================= */
- .poulet-Descente {
+.poulet-Descente {
     visibility: visible;
     display: block;
     transform: translateY(100%);
-    transition: transform 400ms ease-in-out ;
-} 
+    transition: transform 400ms ease-in-out;
+}
 
 .poulet-Montee {
     visibility: visible;
     display: block;
     transform: translateY(0%);
-    transition: transform 400ms ease-in-out ;
-} 
+    transition: transform 400ms ease-in-out;
+}
 
 
 /* Dimensions et positions des poulets */
 /*==================================== */
-.Box1{
-    height:18.68%;
-    width:24.34%;
+.Box1 {
+    height: 18.68%;
+    width: 24.34%;
     /*Offset*/
     left: 0.87%;
-    top :58.33%;
+    top: 58.33%;
 }
 
-.Box1{
-    height:18.68%;
-    width:24.34%;
+.Box1 {
+    height: 18.68%;
+    width: 24.34%;
     /*Offset*/
     left: 0.87%;
-    top :58.33%;
+    top: 58.33%;
 }
 
-.Box2{
-    height:15.1%;
-    width:19.68%;
+.Box2 {
+    height: 15.1%;
+    width: 19.68%;
     /*Offset*/
     left: 75.55%;
-    top :54%;
+    top: 54%;
 }
 
-.Box3{
-    height:12.45%;
-    width:16.23%;
+.Box3 {
+    height: 12.45%;
+    width: 16.23%;
     /*Offset*/
     left: 35.39%;
-    top :43.52%;
+    top: 43.52%;
 }
 
-.Box4{
-    height:3.43%;
-    width:4.47%;
+.Box4 {
+    height: 3.43%;
+    width: 4.47%;
     /*Offset*/
     left: 92.93%;
-    top :48.67%;
+    top: 48.67%;
 }
 
-.Box5{
-    height:5.37%;
-    width:7%;
+.Box5 {
+    height: 5.37%;
+    width: 7%;
     /*Offset*/
     left: 2.64%;
-    top :46.85%;
+    top: 46.85%;
 }
 
-.Box6{
-    height:4.28%;
-    width:5.58%;
+.Box6 {
+    height: 4.28%;
+    width: 5.58%;
     /*Offset*/
     left: 62.33%;
-    top :41.65%;
+    top: 41.65%;
 }
 
-.Box7{
-    height:1.56%;
-    width:2.03%;
+.Box7 {
+    height: 1.56%;
+    width: 2.03%;
     /*Offset*/
     left: 78.41%;
-    top :24.54%;
+    top: 24.54%;
 }
 
-.Score{
+.Score {
     height: 15.96%;
     width: 20.79%;
     /*offset*/
-    left:50%;
+    left: 50%;
     top: 8.79%;
-    
+
 
 }
 
-.User{
-    height: 7.96%;
-    width: 20.79%;
+.User {
+    height: 10.96%;
+    /* width: 20.79%; */
+    width: 40%;
     /*offset*/
-    left:50%;
+    left: 40%;
     top: 01%;
-   
+
 }
 
-.ExitGame{
+.ExitGame {
     height: 10.5%;
     width: 13.7%;
     /*offset*/
-    left:82%;
+    left: 82%;
     top: 0%;
-  
+
 }
 
 
@@ -328,11 +334,13 @@ img{
 
 @keyframes zoomAnimation {
 
-    50% { font-size: 6rem;
-        transform: font-size 300ms; }
+    50% {
+        font-size: 6rem;
+        transform: font-size 300ms;
+    }
 
-  }
-  
+}
+
 /* DEBUG :: 
 
 /* .bt-mont {

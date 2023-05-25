@@ -1,6 +1,7 @@
 /* ====================================================== */
 /*                      EVENT LISTENNER                   */
 /* ====================================================== */
+
 window.addEventListener("load", function () {
   var gameContainer = document.querySelector(".game-container");
   setTimeout(function () {
@@ -71,11 +72,13 @@ function startLoop(settings) {
     clearInterval(timerInterval);
     console.log("Jeu terminé");
 
+    createPopup();
+
     //Affichage score, bp page score, Rejouer
     // AffichageFinPartie();
 
     //Sauvegarde du score
-    sauvegarderPartie(settings.user, settings.difficulty, objScore.scoreActive);
+    //sauvegarderPartie(settings.user, settings.difficulty, objScore.scoreActive);
 
 
   }, settings.dureeJeu);

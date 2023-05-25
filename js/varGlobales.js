@@ -1,8 +1,8 @@
 
 /* DECLARATION DES VARIABLES ET OBJETS */
-
-//Génération de la table poulet & transfert settings
 let tabPoulets = [];
+//Génération de la table poulet & transfert settings
+
 
 let objPoulet = {
   classActive: '',
