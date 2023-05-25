@@ -1,33 +1,30 @@
-
 /* ====================================================== */
 /*                      EVENT LISTENNER                   */
 /* ====================================================== */
-window.addEventListener("load", function() {
-    var gameContainer = document.querySelector(".game-container");
-    setTimeout(function() {
-      gameContainer.style.opacity = "1";
-    }, 0);
-
-    let divUser = document.getElementById("User");
-    divUser.innerHTML = settings.user;
-
-    CompteArebourds();
-
-  });
+window.addEventListener("load", function () {
+  var gameContainer = document.querySelector(".game-container");
+  setTimeout(function () {
+    gameContainer.style.opacity = "1";
+  }, 0);
 
 
-  
 
-    
+  CompteArebourds();
+
+});
+
+
+
+
+
 
 
 /* ====================================================== */
 /*                      GAMEPLAY                          */
 /* ====================================================== */
 
-                /* LANCEMENT DU JEU  */
-                /* - - - - - - - - - */
-
+/* LANCEMENT DU JEU  */
+/* - - - - - - - - - */
 
 /*Run -> utilisateur rentre user + difficulté
 /*Execute startGame()
@@ -42,26 +39,27 @@ window.addEventListener("load", function() {
 
 const startGame = () => {
 
+  let settingsJSON2 = sessionStorage.getItem('Parametres');
+
+  // Conversion de la chaîne JSON en objet JavaScript
+  let settingsLocal = JSON.parse(settingsJSON2);
+  console.log("Session : " + settingsLocal.user);
   //On initialise les réglages (difficulté, nom user...)
-  gameInit(settings);
+  gameInit(settingsLocal);
 
   //On rentre dans la loop de jeu  
-  startLoop();
+  startLoop(settingsLocal);
 };
 
 
 
 /* ~~~~~~~~~~~~~~~~~~~ */
-/*     START  LOOP     */
+/*  => START  LOOP     */
 /* ~~~~~~~~~~~~~~~~~~~ */
 
-function startLoop() {
+function startLoop(settings) {
 
-  //Init du score à 0
-  objScore.scoreActive = 0;
 
-  //Init pas d'animation sur poulets
-  TabAnimPouletEnCours = [false, false, false, false, false, false, false];
 
   //Définition d'un timer d'interval
   //Il va executer la fonction genRandom tous les delayGen (500ms par exemple)
@@ -69,9 +67,17 @@ function startLoop() {
 
   //On définit un temps de jeu global, pour lequel on arretera le timer precedent et on arretera le jeu. 
   //On renvoit vers page de score
-  setTimeout(function() {
+  setTimeout(function () {
     clearInterval(timerInterval);
     console.log("Jeu terminé");
+
+    //Affichage score, bp page score, Rejouer
+    // AffichageFinPartie();
+
+    //Sauvegarde du score
+    sauvegarderPartie(settings.user, settings.difficulty, objScore.scoreActive);
+
+
   }, settings.dureeJeu);
 }
 
@@ -95,38 +101,38 @@ const genRandom = () => {
   } else {
 
     console.log("Poulet qui entre en anim : " + numDivRandom);
-    
+
     let trollRandom = Math.floor(Math.random() * 5);
 
     //Récupération dans PouletsRandom la div poulet du bon index
     const PouletsRandom = Poulets[numDivRandom];
 
     TabAnimPouletEnCours[numDivRandom] = true;
-    
+
     PouletsRandom.style.visibility = 'visible';
     PouletsRandom.classList.add("poulet-Montee");
 
     timerPoulets[numDivRandom] = setTimeout(function () {
-     
+
       PouletsRandom.classList.remove("poulet-Montee");
       PouletsRandom.classList.add("poulet-Descente");
-     
+
       TabAnimPouletEnCours[numDivRandom] = false;
-     
+
       clearInterval(timerPoulets[numDivRandom]);
-    
+
     }, settings.delayVisible);
 
     // Vérifier si l'écouteur d'événements est déjà attaché
-    
+
     if (!tabEventListenners[numDivRandom]) {
-    
+
       const eventListener = () => PouletTouche(numDivRandom);
-      
+
       PouletsRandom.addEventListener("click", eventListener);
-      
+
       tabEventListenners[numDivRandom] = true;
-      
+
       eventListeners[numDivRandom] = eventListener;
     }
   }
@@ -138,44 +144,44 @@ const genRandom = () => {
 /* ~~~~~~~~~~~~~~~~~ */
 
 function PouletTouche(numDivRandom) {
-  
+
   //Reset le timer en cours
   clearTimeout(timerPoulets[numDivRandom]);
-  
+
   const Poulets = document.querySelectorAll('.Layer-Box img');
   const PouletsRandom = Poulets[numDivRandom];
-  
+
   PouletsRandom.classList.remove("poulet-Montee");
   PouletsRandom.classList.add("poulet-Descente");
-  
+
   TabAnimPouletEnCours[numDivRandom] = false;
   tabEventListenners[numDivRandom] = false;
 
-  objScore.scoreActive++;
-  
+  objScore.scoreActive = objScore.scoreActive + numDivRandom + 1;
+
   majAffScore();
-  
+
   console.log("score : " + objScore.scoreActive);
-  
+
   PouletsRandom.removeEventListener("click", eventListeners[numDivRandom]);
 }
-  
+
 
 /* ~~~~~~~~~~~~~~~~~~~ */
 /*   SCORE  DISPLAY    */
 /* ~~~~~~~~~~~~~~~~~~~ */
 
 
-function majAffScore(){
+function majAffScore() {
   let divScore = document.getElementById('Score');
   divScore.innerHTML = objScore.scoreActive;
-  
-   // Ajouter la classe zoom-effect
-   divScore.classList.add('zoom-effect');
+
+  // Ajouter la classe zoom-effect
+  divScore.classList.add('zoom-effect');
 
   // Supprimer la classe zoom-effect après un court délai
-  setTimeout(function() {
-  divScore.classList.remove('zoom-effect');
+  setTimeout(function () {
+    divScore.classList.remove('zoom-effect');
   }, 1000); // Durée de l'animation en millisecondes
 }
 
@@ -185,7 +191,7 @@ function majAffScore(){
 /*     COMPTE A REBOURDS    */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-function CompteArebourds(){
+function CompteArebourds() {
 
   let text = document.getElementById('text-decompte');
   let seconde = 4;
@@ -196,12 +202,12 @@ function CompteArebourds(){
     text.classList.add = "animText-decompte";
     text.innerText = seconde;
 
-  if (seconde <= 0) {
-    clearInterval(intervalText);
-    
-    text.parentElement.remove();
-    startGame();
+    if (seconde <= 0) {
+      clearInterval(intervalText);
 
-  }
-}, 1000); // Réduire de 1 seconde toutes les 1000 millisecondes (1 seconde)
+      text.parentElement.remove();
+      startGame();
+
+    }
+  }, 1000); // Réduire de 1 seconde toutes les 1000 millisecondes (1 seconde)
 }

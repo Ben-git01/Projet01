@@ -1,10 +1,5 @@
-/* ================= NAVBAR ======================*/
-const menuHamburger = document.querySelector(".menu-hamburger")
-const navLinks = document.querySelector(".nav-links")
 
-menuHamburger.addEventListener('click',() => {
-navLinks.classList.toggle('mobile-menu')
-})
+
 
 function startGameSets(){
 
@@ -17,7 +12,6 @@ function startGameSets(){
     popupReglages.style.transform =  "translateY(20%)";
     popupReglages.style.transition= "transform 1s ease-in-out";
    
-    console.log(bpRun + popupReglages);
    
    }
    
@@ -46,6 +40,7 @@ nivDiff.forEach(function(rb) {
 function checkRequire() {
   let verifUsername = username.value.trim() !== "";
   console.log(verifUsername);
+  
 
   let niveauSelected = false;
   nivDiff.forEach(function(rb) {
@@ -54,13 +49,27 @@ function checkRequire() {
     }
   });
 
-  if (verifUsername && niveauSelected) {
-    btnStart.style.display = "block";
-    btnStart.style.background = "green";
+  if (verifUsername && niveauSelected) { 
+    let difficulte = returnNiveauSelected();
     btnStart.disabled = false;
-    btnStart.style.color = "white";
-    btnStart.style.fontSize = "1.2rem";
-    btnStart.innerHTML = "Good luck!";
+    btnStart.style.visibility= "visible";
+    btnStart.style.display= "block";
+    
+    switch (difficulte) {
+
+      case "easy":  btnStart.innerHTML = "Poule mouillée 😏";
+      break;
+
+      case "medium":  btnStart.innerHTML = "Allons-y gaiement 🐔";
+      break;
+
+       case "hard":  btnStart.innerHTML = "Tu prends la confiance 🤠";
+      break;
+
+      case "impossible":  btnStart.innerHTML = "RIP 😱😱😱";
+      break;
+    }
+   
   } else {
     btnStart.style.display = "none";
   }
@@ -75,10 +84,28 @@ checkRequire();
 
 /* =========== BOUTON GO ========== */
 btnStart.addEventListener("click", function() {
+ 
   settings.user = username.value;
-  settings.difficulty = document.querySelector('input[name^="sel-"]:checked').value;
+  console.log("test duree du jeu : " +settings.dureeJeu);
   
   console.log("User : " + settings.user + " Difficulté : " + settings.difficulty);
-  window.location.href = "Game.html";
+
+  /* MISE EN CACHE DANS VARIABLE SESSION */
+// Conversion de l'objet en une chaîne JSON
+let settingsJSON = JSON.stringify(settings);
+
+// Stockage de la chaîne JSON dans sessionStorage
+sessionStorage.setItem('Parametres', settingsJSON);
+console.log(tabPlayers);
+
+ window.location.href = "Game.html";
+ 
 });
+
+
+function returnNiveauSelected() {
+  settings.difficulty = document.querySelector('input[name^="sel-"]:checked').value;
+  console.log(settings.difficulty);
+  return settings.difficulty;
+}
    

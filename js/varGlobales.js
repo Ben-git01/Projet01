@@ -28,8 +28,8 @@ let settings = {
   difficulty: '',
   delayReap: 5000,
   delayVisible: 2000,
-  delayGen: 500,
-  dureeJeu: 20000,
+  delayGen: 150,
+  dureeJeu: 2000,
   nbrePoulets: 7
 };
 
@@ -40,3 +40,9 @@ let eventListeners = [];
 
 // Trigger timerflow
 let trigger = true;
+
+let tabPlayers = [];
+
+
+
+
