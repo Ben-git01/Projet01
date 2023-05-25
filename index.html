@@ -52,8 +52,13 @@
 
         <div class="Sets">
           <div class="Sets-user">
-            <label for="username"> Username : </label>
-            <input id="username" type="text" name="username" />
+            <label class="userClass" for="username"> Username : </label>
+            <input
+              class="InputuserClass"
+              id="username"
+              type="text"
+              name="username"
+            />
           </div>
           <div class="Sets-difficulty">
             <div class="radio-btn">
@@ -112,7 +117,7 @@
         let sonBp = new Audio(
           "./assets/sound/boom-geomorphism-cinematic-trailer-sound-effects-123876.mp3"
         );
-
+        fondSonore.loop = true;
         fondSonore.play();
         sonBp.play();
       });

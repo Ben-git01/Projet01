@@ -1,7 +1,9 @@
 /* ============== BOUTON RUN ================ */
 function startGameSets() {
-  let fondSonore = new Audio("22-caliber-with-ricochet-39679.mp3");
-  fondSonore.play();
+  let bruitFusil = new Audio(
+    "./assets/sound/22-caliber-with-ricochet-39679.mp3"
+  );
+  bruitFusil.play();
   const bpRun = document.getElementById("buttonRun");
   bpRun.style.visibility = "hidden";
 
@@ -25,6 +27,10 @@ nivDiff.forEach(function (rb) {
     nivDiff.forEach(function (desactivAutreBp) {
       if (desactivAutreBp !== rb) {
         desactivAutreBp.checked = false;
+        let bruitFusil = new Audio(
+          "./assets/sound/22-caliber-with-ricochet-39679.mp3"
+        );
+        bruitFusil.play();
       }
     });
     checkRequire();
@@ -80,6 +86,8 @@ checkRequire();
 
 /* =========== BOUTON GO ========== */
 btnStart.addEventListener("click", function () {
+  let bruitStart = document.createElement("audio");
+
   settings.user = username.value;
   console.log("test duree du jeu : " + settings.dureeJeu);
 
@@ -95,7 +103,9 @@ btnStart.addEventListener("click", function () {
   sessionStorage.setItem("Parametres", settingsJSON);
   console.log(tabPlayers);
 
+  // bruitStart.addEventListener("ended", function() {
   window.location.href = "Game.html";
+  // });
 });
 
 function returnNiveauSelected() {
