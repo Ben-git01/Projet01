@@ -19,10 +19,14 @@
 .popup-text{
     display:flex;
     justify-content:center;
-
+    align-items: center;
     height:20%;
     width:100%;
 
+}
+
+.popup-text:nth-child(1){
+    background-color:#cc9aa2;
 }
 
 .popup-button{

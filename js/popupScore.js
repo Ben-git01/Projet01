@@ -21,7 +21,7 @@ function createPopup() {
   popupScore.classList.add("popup-text");
   popupEndGame.appendChild(popupScore);
 
-  popupScore.innerHTML = objScore.scoreActive;
+  popupScore.innerHTML = "Ton score : " + objScore.scoreActive;
 
   let popupRestart = document.createElement("button");
   popupEndGame.appendChild(popupRestart);

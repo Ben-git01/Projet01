@@ -20,7 +20,9 @@ const startGame = () => {
 
   // Conversion de la chaîne JSON en objet JavaScript
   let settingsLocal = JSON.parse(settingsJSON2);
-  console.log("Session : " + settingsLocal.user);
+  console.log(
+    "Session : " + settingsLocal.user + "Niveau : " + settingsLocal.difficulty
+  );
   //On initialise les réglages (difficulté, nom user...)
   gameInit(settingsLocal);
 
@@ -40,7 +42,8 @@ function startLoop() {
   partieEnCours = true;
   //Définition d'un timer d'interval
   //Il va executer la fonction genRandom tous les delayGen (500ms par exemple)
-  const timerInterval = setInterval(genRandom, settings.delayGen);
+  console.log("delais avant gen random : " + settings.delayReap);
+  const timerInterval = setInterval(genRandom, settings.delayReap);
 
   //On définit un temps de jeu global, pour lequel on arretera le timer precedent et on arretera le jeu.
   //On renvoit vers page de score
