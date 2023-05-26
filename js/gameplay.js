@@ -35,7 +35,7 @@ const startGame = () => {
 function startLoop() {
   let fondSonore = document.createElement("audio");
   fondSonore.src = "../assets/sound/fond-sonoreEnerve.mp3";
-  fondSonore.play();
+  //fondSonore.play();
 
   partieEnCours = true;
   //Définition d'un timer d'interval
@@ -56,7 +56,8 @@ function startLoop() {
     myAudio.play();
     partieEnCours = false;
     //Sauvegarde du score
-    sauvegarderPartie(settings.user, settings.difficulty, objScore.scoreActive);
+    createPopup();
+    //sauvegarderPartie(settings.user, settings.difficulty, objScore.scoreActive);
   }, settings.dureeJeu);
 }
 
