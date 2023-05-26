@@ -26,7 +26,8 @@
 }
 
 .popup-text:nth-child(1){
-    background-color:#cc9aa2;
+    background-color:#cd542c;
+    color:white;
 }
 
 .popup-button{
