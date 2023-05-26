@@ -34,7 +34,7 @@ const gameInit = (Localsettings) => {
       console.log("Niveau difficile");
       break;
     case "impossible":
-      Localsettings.delayReap = 800;
+      Localsettings.delayReap = 300;
       Localsettings.delayVisible = 800;
 
       console.log("Niveau difficile");
