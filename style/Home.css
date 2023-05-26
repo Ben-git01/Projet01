@@ -60,6 +60,7 @@ body {
 .button-run{
     border-radius: 24px;
     background-color: #d9a10d;
+    cursor:pointer;
 }
 
 

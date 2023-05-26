@@ -10,7 +10,7 @@ body{
     background-repeat: no-repeat;
     }
 
- main {
+main {
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -35,6 +35,7 @@ input, textarea {
     width: 98%;
     background-color:#e7dede;
     border-radius: 5px;
+    resize: none;
 }
 
 .buttonClass{
@@ -52,7 +53,8 @@ button{
     background-color: rgb(105, 170, 40);
     border-radius: 7px;
     border-color: #e7dede 30%;
-
+    width: 6rem;
+    height: 3rem;
 
 }
 
@@ -60,11 +62,12 @@ button{
 .contact {
 
     
-
-    /* width: 30rem; */
+    
+    width: 50%;
     border-radius: 10px;
     /* margin-top: 30rem; */
     background-color: rgb(211, 212, 206);
     border: 5px solid #f9faf7;
 
 }
+

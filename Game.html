@@ -1,80 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Document</title>
-    <link rel="stylesheet" href="style/Structure.css"> 
-    <link rel="stylesheet" href="style/NavBar.css">
-    <link rel="stylesheet" href="style/Game.css">
-    
-   
-  
-  
-
-</head>
-<body>   
-
+    <link rel="stylesheet" href="style/Structure.css" />
+    <link rel="stylesheet" href="style/NavBar.css" />
+    <link rel="stylesheet" href="style/Game.css" />
+    <link rel="stylesheet" href="style/popup.css" />
+  </head>
+  <body>
     <div class="game-container">
+      <div class="User"><span id="User-text"></span></div>
+      <div class="Score" id="Score"><span></span></div>
 
-        <div class="PaletteGame">
-            <div class="infos">
-            <div >
-                <span id="Score" class="score"></span>
-            </div>
-            <div> <span id="User"></span> </div>
-            <div class="ExitGame">
-                <a href="index.html" class="ExitGame"> <span>Exit </span></a></div>
-            </div>
-        </div>
-        
-        <div class="Decompte" id="decompte">
-            <span class="text-decompte" id="text-decompte"></span>
-        </div>
+      <div class="Decompte" id="decompte">
+        <span class="text-decompte" id="text-decompte"></span>
+      </div>
 
-        <div class="Layer-Box Box1">
-            <img src="assets/img/Poulets/preloader_gif2.gif" alt="image">
-         
-        </div>
-        <div class="Layer-Box Box2">
-            <img src="assets/img/Poulets/preloader_gif2.gif" alt="image">
-        </div>
-        <div class="Layer-Box Box3" >
-            <img src="assets/img/Poulets/preloader_gif2.gif" alt="image">
-        </div>
-        <div class="Layer-Box Box4">
-            <img src="assets/img/Poulets/preloader_gif2.gif" alt="image">
-        </div>
-        <div class="Layer-Box Box5">
-            <img src="assets/img/Poulets/preloader_gif2.gif" alt="image">
-        </div>
-        <div class="Layer-Box Box6">
-            <img src="assets/img/Poulets/preloader_gif2.gif" alt="image">
-        </div>
-        <div class="Layer-Box Box7">
-            <img src="assets/img/Poulets/preloader_gif2.gif" alt="image">
-        </div>
+      <div class="ExitGame">
+        <a href="index.html"> <span>Exit</span></a>
+      </div>
 
-        <img class="img-background" id="img-backGame" src="assets/img/background/Background-pipe.png" alt="image">
+      <div class="Layer-Box Box1">
+        <img src="assets/img/Poulets/preloader_gif2.gif" alt="image" />
+      </div>
+      <div class="Layer-Box Box2">
+        <img src="assets/img/Poulets/preloader_gif2.gif" alt="image" />
+      </div>
+      <div class="Layer-Box Box3">
+        <img src="assets/img/Poulets/preloader_gif2.gif" alt="image" />
+      </div>
+      <div class="Layer-Box Box4">
+        <img src="assets/img/Poulets/preloader_gif2.gif" alt="image" />
+      </div>
+      <div class="Layer-Box Box5">
+        <img src="assets/img/Poulets/preloader_gif2.gif" alt="image" />
+      </div>
+      <div class="Layer-Box Box6">
+        <img src="assets/img/Poulets/preloader_gif2.gif" alt="image" />
+      </div>
+      <div class="Layer-Box Box7">
+        <img src="assets/img/Poulets/preloader_gif2.gif" alt="image" />
+      </div>
 
+      <div class="Info-Piaf">
+        <div class="ellipse">
+          <span class="textPiaf"></span>
+        </div>
+        <div class="fleche"></div>
+      </div>
 
-        <!-- DEBUG -->
-        <!-- <button type="button" id="btn" class="bp-play" onclick="startGame()">Click Here!</button>
+      <img
+        class="img-background"
+        id="img-backGame"
+        src="assets/img/background/Background-3.png"
+        alt="image"
+      />
+
+      <!-- DEBUG -->
+      <!-- <button type="button" id="btn" class="bp-play" onclick="startGame()">Click Here!</button>
         <button type="button" id="btn-montee" class="bp-play bt-mont" onclick="montee()">montee</button>
         <button type="button" id="btn-descente" class="bp-play btn-desc" onclick="descente()">descente</button> -->
-
-
     </div>
+  </body>
 
+  <script>
+    window.addEventListener("beforeunload", stopMusic);
 
+    function beforeunload() {
+      fondSonore.pause();
+      fondSonore.currentTime = 0;
+    }
+  </script>
+  <script type="text/javascript" src="js/popupScore.js"></script>
+  <script type="text/javascript" src="js/varGlobales.js"></script>
+  <script type="text/javascript" src="js/settings.js"></script>
+  <script type="text/javascript" src="js/gameplay.js"></script>
+  <script type="text/javascript" src="js/scriptHome.js"></script>
+  <!-- <script type="text/javascript" src="js/SauvScore.js"></script> -->
 
-    
-</body>
+  <script>
+    /* ====================================================== */
+    /*                      EVENT LISTENNER                   */
+    /* ====================================================== */
 
-<script type="text/javascript" src="js/varGlobales.js"></script>
-<script type="text/javascript" src="js/settings.js"></script>
-<script type="text/javascript" src="js/gameplay.js"></script>
-
+    window.addEventListener("load", function () {
+      var gameContainer = document.querySelector(".game-container");
+      setTimeout(function () {
+        gameContainer.style.opacity = "1";
+      }, 200);
+      CompteArebourds();
+    });
+  </script>
 </html>

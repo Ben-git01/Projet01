@@ -1,70 +1,74 @@
-
 /* ====================================================== */
-/*                      SETTINGS                         */
+/*                      SETTINGS                          */
 /* ====================================================== */
 
 /* ~~~~~~~~~~~ */
 /*    INIT     */
 /* ~~~~~~~~~~~ */
 
-
-const gameInit = (GameSettings) => {
+const gameInit = (Localsettings) => {
   console.log("Initialisation .... ");
 
+  console.log(
+    "Recuperation depuis storage - difficulte : " + settings.difficulty
+  );
+
   // Difficultés du jeu
-  switch (GameSettings.difficulty) {
-    case 'easy':
-      GameSettings.delayReap = 1000;
-      GameSettings.delayVisible = 3000;
-      GameSettings.dureeJeu = 60000;
+  switch (Localsettings.difficulty) {
+    case "easy":
+      Localsettings.delayReap = 1000;
+      Localsettings.delayVisible = 2000;
+
       console.log("Niveau facile");
       break;
-    case 'medium':
-      GameSettings.delayReap = 1000;
-      GameSettings.delayVisible = 2000;
-      GameSettings.dureeJeu = 60000;
+    case "medium":
+      Localsettings.delayReap = 1000;
+      Localsettings.delayVisible = 1500;
+
       console.log("Niveau moyen");
       break;
-    case 'hard':
-      GameSettings.delayReap = 1000;
-      GameSettings.delayVisible = 1000;
-      GameSettings.dureeJeu = 60000;
+    case "hard":
+      Localsettings.delayReap = 1000;
+      Localsettings.delayVisible = 1000;
+
       console.log("Niveau difficile");
       break;
-    case 'impossible':
-     GameSettings.delayReap = 1000;
-        GameSettings.delayVisible = 1000;
-        GameSettings.dureeJeu = 60000;
-        console.log("Niveau difficile");
-        break;
+    case "impossible":
+      Localsettings.delayReap = 800;
+      Localsettings.delayVisible = 800;
+
+      console.log("Niveau difficile");
+      break;
     default:
       break;
   }
 
   //Ecriture à tous les poulets du délais de réapparition et de visibilité
-  for (let i = 0; i < settings.nbrePoulets; i++) {
+  for (let i = 0; i < Localsettings.nbrePoulets; i++) {
     tabPoulets.push(objPoulet);
-    tabPoulets[i].delayReap = GameSettings.delayReap;
-    tabPoulets[i].delayVisible = GameSettings.delayVisible;
+    tabPoulets[i].delayReap = Localsettings.delayReap;
+    tabPoulets[i].delayVisible = Localsettings.delayVisible;
   }
 
   //console.log(tabPoulets); DEBUG
-  console.log("Duree partie : " + settings.dureeJeu);
-  console.log("delais reap : " + settings.delayReap);
-  console.log("delais visible : " + settings.delayVisible);
+  console.log("Duree partie : " + Localsettings.dureeJeu);
+  console.log("delais reap : " + Localsettings.delayReap);
+  console.log("delais visible : " + Localsettings.delayVisible);
 
+  //Init du score à 0
+  objScore.scoreActive = 0;
+
+  //Init pas d'animation sur poulets
+  TabAnimPouletEnCours = [false, false, false, false, false, false, false];
+
+  // Affichage user
+  console.log("Utilisateur dans fonction : " + settings.user);
+  let divUser = document.getElementById("User-text");
+  divUser.innerText = Localsettings.user;
+
+  settings.delayReap = Localsettings.delayReap;
+  settings.delayVisible = Localsettings.delayVisible;
 };
-
-
-  
-
-
-
-
-
-
-
-
 
 /* FONCTIONS DE TESTS DEBUG */
 /* ======================= */
@@ -73,7 +77,7 @@ const gameInit = (GameSettings) => {
 //     console.log("montee");
 //     const madiv = document.querySelectorAll(".Layer-Box img");
 //     for(let i=0; i<madiv.length; i++){
-    
+
 //         console.log(madiv[i]);
 
 //     madiv[i].classList.add("poulet-Montee");
@@ -93,4 +97,3 @@ const gameInit = (GameSettings) => {
 //     madiv[i].classList.remove("poulet-Montee");
 //     }
 // }
-
