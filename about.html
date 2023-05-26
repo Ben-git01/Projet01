@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,121 +11,121 @@
     <link rel="stylesheet" href="style/NavBar.css" />
     <link rel="stylesheet" href="style/Structure.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rye&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet" />
+</head>
 
-  <body>
+<body>
     <header>
-      <nav class="navbar">
-        <img
-          src="./assets/img/nav-bar/Logo.png"
-          alt="menu-burger"
-          class="logo"
-        />
+        <nav class="navbar">
+            <img src="./assets/img/nav-bar/Logo.png" alt="menu-burger" class="logo" />
 
-        <div class="nav-links">
-          <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="about.html">A propos</a></li>
-            <li><a href="score.html">Scores</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <img
-          src="assets/img/nav-bar/logo-menu-burger.png"
-          alt="menu"
-          class="menu-hamburger"
-        />
-      </nav>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">A propos</a></li>
+                    <li><a href="score.html">Scores</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <img src="assets/img/nav-bar/logo-menu-burger.png" alt="menu" class="menu-hamburger" />
+        </nav>
     </header>
 
     <main>
-      <div class="Container-propos">
-        <div class="Container-titre">
-          <h1 class="titre-aPropos">A Propos</h1>
-        </div>
-        <div class="Container-description">
-          <div>
-            <img
-              src="assets/img/ChickenTeam/Nico.png"
-              class="Pictures-Chicken"
-            />
-          </div>
-          <div class="Names">Nicolas</div>
-          <div class="DescriptionDev">
-            Poulet toujours prêt à aider mais jamais sans un café à coté
-          </div>
-        </div>
-        <div class="Container-description">
-          <div>
-            <img
-              src="assets/img/ChickenTeam/chicken_antho.png"
-              class="Pictures-Chicken"
-            />
-          </div>
-          <div class="Names">Antoine</div>
-          <div class="DescriptionDev">
-            Génie des animations, option JavaScript carrelage
-          </div>
-        </div>
-        <div class="Container-description">
-          <div>
-            <img
-              src="assets/img/ChickenTeam/benjamin.png"
-              class="Pictures-Chicken"
-            />
-          </div>
-          <div class="Names">Benjamin</div>
-          <div class="DescriptionDev">git un jour, git toujours</div>
-        </div>
-        <div class="Container-description">
-          <div>
-            <img
-              src="assets/img/ChickenTeam/Mathieu.png"
-              class="Pictures-Chicken"
-            />
-          </div>
-          <div class="Names">Mathieu</div>
-          <div class="DescriptionDev">
-            Poulet retro-gamer, mais poulet tout de même
-          </div>
-        </div>
-        <div class="Container-description">
-          <div>
-            <img
-              src="assets/img/ChickenTeam/Jojo.png"
-              class="Pictures-Chicken"
-            />
-          </div>
-          <div class="Names">Joakym</div>
-          <div class="DescriptionDev">Poulet boxeur, pattes de forain</div>
-        </div>
-        <div class="Container-description">
-          <div>
-            <img
-              src="assets/img/ChickenTeam/Damien.png"
-              class="Pictures-Chicken"
-            />
-          </div>
-          <div class="Names">Damien</div>
-          <div class="DescriptionDev">
-            Le Poulet indécis, mélomane sous cachetons
-          </div>
-        </div>
-      </div>
-
-      <!-- <p>
-            La team Chicken est fière de vous présenter
-        </p>
-     -->
+        <div class="Container-propos">
+            <!-- Nicolas -->
+            <div class="Container-description">
+                <div id="backgroundChicken1">
+                    <img src="assets/img/ChickenTeam/Nico.png" class="Pictures-Chicken" id="Chicken1">
+                </div>
+                <div class="Description">
+                    <div class="effectMiddle">
+                        <span class="effectContainer">
+                            <div class="effectText" data-text="Nicolas">Nicolas</div>
+                        </span>
+                    </div>
+                    <div class="DescriptionDev"> Toujours prêt à aider mais jamais sans un café à coté </div>
+                </div>
+            </div>
+            <!-- Antoine-->
+            <div class="Container-description">
+                <div id="backgroundChicken1">
+                    <img src="assets/img/ChickenTeam/chicken_antho.png" class="Pictures-Chicken" id="Chicken2">
+                </div>
+                <div class="Description">
+                    <div class="effectMiddle">
+                        <span class="effectContainer">
+                            <div class="effectText" data-text="Antoine">Antoine</div>
+                        </span>
+                    </div>
+                    <div class="DescriptionDev"> Génie des animations, option JavaScript carrelage </div>
+                </div>
+            </div>
+            <!-- Benjamin -->
+            <div class="Container-description">
+                <div id="backgroundChicken1">
+                    <img src="assets/img/ChickenTeam/benjamin.png" class="Pictures-Chicken" id="Chicken3">
+                </div>
+                <div class="Description">
+                    <div class="effectMiddle">
+                        <span class="effectContainer">
+                            <div class="effectText" data-text="Benjamin">Benjamin</div>
+                        </span>
+                    </div>
+                    <div class="DescriptionDev"> Git un jour, git toujours </div>
+                </div>
+            </div>
+            <!-- Mathieu -->
+            <div class="Container-description">
+                <div id="backgroundChicken1">
+                    <img src="assets/img/ChickenTeam/Mathieu.png" class="Pictures-Chicken" id="Chicken4">
+                </div>
+                <div class="Description">
+                    <div class="effectMiddle">
+                        <span class="effectContainer">
+                            <div class="effectText" data-text="Mathieu">Mathieu</div>
+                        </span>
+                    </div>
+                    <div class="DescriptionDev"> Poulet retro-gamer, mais poulet tout de même </div>
+                </div>
+            </div>
+            <!-- Joakym -->
+            <div class="Container-description">
+                <div id="backgroundChicken1">
+                    <img src="assets/img/ChickenTeam/Jojo.png" class="Pictures-Chicken" id="Chicken5">
+                </div>
+                <div class="Description">
+                    <div class="effectMiddle">
+                        <span class="effectContainer">
+                            <div class="effectText" data-text="Joakym">Joakym</div>
+                        </span>
+                    </div>
+                    <div class="DescriptionDev"> Poulet boxeur, pattes de forain </div>
+                </div>
+            </div>
+            <!-- Damien -->
+            <div class="Container-description">
+                <div id="backgroundChicken1">
+                    <img src="assets/img/ChickenTeam/Damien.png" class="Pictures-Chicken" id="Chicken6">
+                </div>
+                <div class="Description">
+                    <div class="effectMiddle">
+                        <span class="effectContainer">
+                            <div class="effectText" data-text="Damien">Damien</div>
+                        </span>
+                    </div>
+                    <div class="DescriptionDev"> Le Poulet indécis, mélomane sous cachetons </div>
+                </div>
+            </div>
     </main>
 
-    <!-- <footer>
+    <footer>
         <span class="text-footer-left"> <i>Projet fait par des wilders pour des wilders</i></span>
         <span class="text-footer-right"> #WCS mai 2023 </span>
-   </footer>
-  --></body>
+    </footer>
+
+    <script src="js/navbar.js"></script>
+
+</body>
+
 </html>
