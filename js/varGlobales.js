@@ -29,7 +29,7 @@ let settings = {
   delayReap: 5000,
   delayVisible: 2000,
   delayGen: 150,
-  dureeJeu: 30000,
+  dureeJeu: 1000,
   nbrePoulets: 7,
 };
 
